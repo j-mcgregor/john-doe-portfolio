@@ -7,6 +7,8 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Header from './Header'
+
+import 'flexboxgrid2'
 import './Layout.css'
 
 const Layout: React.SFC<{}> = ({ children }) => {
@@ -22,20 +24,20 @@ const Layout: React.SFC<{}> = ({ children }) => {
     return (
         <>
             <Header siteTitle={data.site.siteMetadata.title} />
-            <div
-                style={{
-                    margin: `0 auto`,
-                    maxWidth: 960,
-                    padding: `0 1.0875rem 1.45rem`,
-                }}
-            >
-                <main>{children}</main>
-                <footer>
-                    © {new Date().getFullYear()}, Built with
-                    {` `}
-                    <a href="https://www.gatsbyjs.org">Gatsby</a>
-                </footer>
+            <div className="container">
+                <div className="row">
+                    <main>{children}</main>
+                </div>
+                <div className="row">
+                    <div className="col-md-6">I'm on the left</div>
+                    <div className="col-md-6">And I'm on the right</div>
+                </div>
             </div>
+            <footer className="container-fluid">
+                © {new Date().getFullYear()}, Built with
+                {` `}
+                <a href="https://www.gatsbyjs.org">Gatsby</a>
+            </footer>
         </>
     )
 }
