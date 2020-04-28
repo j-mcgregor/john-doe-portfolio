@@ -4,3 +4,4 @@
 **/dist/*
 **/coverage/*
 **/*.d.ts
+**/public
