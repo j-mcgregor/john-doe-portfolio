@@ -8,14 +8,25 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-type SEOProps = {
+export interface MetaProps {
+    name: string
+    content: string
+}
+
+export interface SEOProps {
     description?: string
     lang?: string
-    meta?: object[]
+    meta?: MetaProps[]
     title: string
 }
-const SEO: React.SFC<SEOProps> = ({ description, lang, meta, title }) => {
-    const { site } = useStaticQuery(graphql`
+
+const SEO: React.SFC<SEOProps> = ({
+    description = '',
+    lang = 'en',
+    meta = [],
+    title,
+}) => {
+    const seoQuery = useStaticQuery(graphql`
         query {
             site {
                 siteMetadata {
@@ -26,18 +37,27 @@ const SEO: React.SFC<SEOProps> = ({ description, lang, meta, title }) => {
             }
         }
     `)
-    const metaDescription = description || site.siteMetadata.description
+
+    let helmetTitle = ''
+    let helmetDescription = ''
+    let helmetAuthor = ''
+
+    if (seoQuery && seoQuery.site) {
+        helmetTitle = title || seoQuery.site.title || ''
+        helmetDescription = description || seoQuery.site.description || ''
+        helmetAuthor = seoQuery.site.author || ''
+    }
     return (
         <Helmet
             htmlAttributes={{
                 lang,
             }}
             title={title}
-            titleTemplate={`%s | ${site.siteMetadata.title}`}
+            titleTemplate={`%s | ${helmetTitle}`}
             meta={[
                 {
                     name: `description`,
-                    content: metaDescription,
+                    content: helmetDescription,
                 },
                 {
                     property: `og:title`,
@@ -45,7 +65,7 @@ const SEO: React.SFC<SEOProps> = ({ description, lang, meta, title }) => {
                 },
                 {
                     property: `og:description`,
-                    content: metaDescription,
+                    content: helmetDescription,
                 },
                 {
                     property: `og:type`,
@@ -57,7 +77,7 @@ const SEO: React.SFC<SEOProps> = ({ description, lang, meta, title }) => {
                 },
                 {
                     name: `twitter:creator`,
-                    content: site.siteMetadata.author,
+                    content: helmetAuthor,
                 },
                 {
                     name: `twitter:title`,
@@ -65,15 +85,11 @@ const SEO: React.SFC<SEOProps> = ({ description, lang, meta, title }) => {
                 },
                 {
                     name: `twitter:description`,
-                    content: metaDescription,
+                    content: helmetDescription,
                 },
             ].concat(meta)}
         />
     )
 }
-SEO.defaultProps = {
-    lang: `en`,
-    meta: [],
-    description: ``,
-}
+
 export default SEO

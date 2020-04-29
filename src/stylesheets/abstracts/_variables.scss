@@ -1,0 +1,27 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// inspiration from https://thoughtbot.com/blog/sass-variables
+// -----------------------------------------------------------------------------
+
+// THEME COLORS FROM COOLORS.CO
+$default-color: rgba(26, 83, 92, 1);
+$font-color: darken($default-color, 60%);
+$light-color: lighten($default-color, 20%);
+$dark-color: darken($default-color, 20%);
+$contrast-color: teal;
+$warning-color: rgba(255, 230, 109, 1);
+$important-color: rgba(255, 107, 107, 1);
+$information-color: rgba(78, 205, 196, 1);
+$black-color: lighten(black, 5%);
+$white-color: rgba(247, 255, 247, 1);
+
+// FONT STYLE AND SIZE
+$default-font: 'Roboto', sans-serif;
+$font-size: 16px;
+$line-height: $font-size * 1.6;
+$h1-size: $font-size * 2;
+$h2-size: $font-size * 1.8;
+$h3-size: $font-size * 1.6;
+$h4-size: $font-size * 1.4;
+$h5-size: $font-size * 1.2;
+$h6-size: $font-size;
