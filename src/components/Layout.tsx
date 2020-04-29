@@ -10,7 +10,7 @@ import Header from './Header'
 
 import 'flexboxgrid2'
 import '../stylesheets/main.scss'
-import './Layout.css'
+import './Layout.scss'
 
 const Layout: React.SFC<{}> = ({ children }) => {
     const data = useStaticQuery(graphql`
@@ -25,20 +25,7 @@ const Layout: React.SFC<{}> = ({ children }) => {
     return (
         <>
             <Header siteTitle={data.site.siteMetadata.title} />
-            <div className="container">
-                <div className="row">
-                    <main>{children}</main>
-                </div>
-                <div className="row mt3 mt-3-sm">
-                    <div className="col-md-6">I'm on the left</div>
-                    <div className="col-md-6">And I'm on the right</div>
-                </div>
-            </div>
-            <footer className="container-fluid flex flex-center-sm">
-                © {new Date().getFullYear()}, Built with
-                {` `}
-                <a href="https://www.gatsbyjs.org">Gatsby</a>
-            </footer>
+            <div className="container-fluid">{children}</div>
         </>
     )
 }

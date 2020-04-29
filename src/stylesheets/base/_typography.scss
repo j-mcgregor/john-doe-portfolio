@@ -1,7 +1,31 @@
 /**
  * Basic typography style for copy text
  */
-body {
-    color: $text-color;
-    font: normal 125% / 1.4 $text-font-stack;
+
+h1 {
+    font-size: $h1-size;
+}
+
+h2 {
+    font-size: $h2-size;
+}
+
+h3 {
+    font-size: $h3-size;
+}
+
+h4 {
+    font-size: $h4-size;
+}
+
+h5 {
+    font-size: $h5-size;
+}
+
+h6 {
+    font-size: $h6-size;
+}
+
+p {
+    line-height: $line-height;
 }
