@@ -6,6 +6,7 @@ import SEO from '../components/SEO'
 import Hero from '../components/landing/Hero'
 import { IndexPageProps } from '../types/interfaces'
 import RichText from '../utils/RichText'
+import Banner from '../components/landing/Banner'
 
 export const query = graphql`
     query IndexPageQuery {
@@ -75,6 +76,7 @@ const IndexPage: React.FC<IndexPageProps> = ({
                 logo={logo}
                 backgroundImage={backgroundImage}
             />
+            <Banner />
         </Layout>
     )
 }
