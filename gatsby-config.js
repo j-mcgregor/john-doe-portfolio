@@ -28,6 +28,13 @@ module.exports = {
             },
         },
         {
+            resolve: `gatsby-plugin-google-fonts`,
+            options: {
+                fonts: [`Abel`, `Montserrat`],
+                display: 'swap',
+            },
+        },
+        {
             resolve: `gatsby-plugin-sass`,
             options: {
                 postCssPlugins: [
