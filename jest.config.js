@@ -13,6 +13,8 @@
  * * You need to set testURL to a valid URL, because some DOM APIs such as localStorage are unhappy with the default (about:blank).
  * SETUP FILES:
  * * lets you list files that will be included before all tests are run, so it’s perfect for this
+ * SETUP FILES AFTER ENV:
+ * * This file gets run automatically by Jest before every test and therefore you don’t need to add the imports to every single test file.
  */
 
 module.exports = {
@@ -28,9 +30,15 @@ module.exports = {
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
     testPathIgnorePatterns: [`node_modules`, `.cache`],
     transformIgnorePatterns: [`node_modules/(?!(gatsby)/)`],
+    collectCoverageFrom: [
+        'src/**/*.{js,jsx,ts,tsx}',
+        '!<rootDir>/node_modules/',
+        '!**/RichTextCustom/**',
+    ],
     globals: {
         __PATH_PREFIX__: ``,
     },
     testURL: `http://localhost`,
     setupFiles: [`<rootDir>/loadershim.js`],
+    setupFilesAfterEnv: ['<rootDir>/setup-test-env.js'],
 }

@@ -12,6 +12,7 @@ const StyledHero = styled.div<StyledHeroProps>`
     background-attachment: fixed;
     height: 700px;
     text-transform: uppercase;
+    animation: fadeIn 0.5s ease-in;
 
     h3 {
         font-family: 'Abel', sans-serif;
@@ -22,6 +23,15 @@ const StyledHero = styled.div<StyledHeroProps>`
     }
     @media screen and (max-width: ${Breakpoints.sm}px) {
         height: 500px;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
     }
 `
 

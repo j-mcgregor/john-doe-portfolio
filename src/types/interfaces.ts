@@ -18,11 +18,23 @@ export interface PRISMIC_Image {
     url: string
 }
 
+export interface PRISMIC_ExperienceType {
+    job_title: string
+    date_from: string
+    date_to?: string
+    present?: boolean
+    company: string
+    city: string
+    description: PRISMIC_RichTextType[]
+}
+
 export interface PRISMIC_landing_node {
     node: {
-        primary_text: PRISMIC_RichTextType[]
+        primary_text: PRISMIC_RichTextType
         secondary_text: PRISMIC_RichTextType[]
         background_image: PRISMIC_Image
+        about: PRISMIC_RichTextType[]
+        experience: PRISMIC_ExperienceType[]
     }
 }
 
@@ -56,4 +68,9 @@ export interface HeroProps {
 
 export interface StyledHeroProps {
     bgImageUrl?: string
+}
+
+export interface AboutProps {
+    about: JSX.Element
+    experience: JSX.Element[]
 }

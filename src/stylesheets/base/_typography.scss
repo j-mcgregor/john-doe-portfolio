@@ -29,3 +29,46 @@ h6 {
 p {
     line-height: $line-height;
 }
+
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+.text-justify {
+    text-align: justify;
+}
+
+@media only screen and (max-width: $width-md) {
+    .text-left-md {
+        text-align: left;
+    }
+    .text-right-md {
+        text-align: right;
+    }
+    .text-center-md {
+        text-align: center;
+    }
+    .text-justify-md {
+        text-align: justify;
+    }
+}
+
+@media only screen and (max-width: $width-sm) {
+    .text-left-sm {
+        text-align: left;
+    }
+    .text-right-sm {
+        text-align: right;
+    }
+    .text-center-sm {
+        text-align: center;
+    }
+    .text-justify-sm {
+        text-align: justify;
+    }
+}

@@ -4,9 +4,12 @@ import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import Hero from '../components/landing/Hero'
-import { IndexPageProps } from '../types/interfaces'
-import RichText from '../utils/RichText'
+import { IndexPageProps, PRISMIC_ExperienceType } from '../types/interfaces'
+import RichText from '../utils/RichTextCustom'
+import createKey from '../utils/createKey'
 import Banner from '../components/landing/Banner'
+import About from '../components/landing/About'
+import Card from '../components/shared/Card'
 
 export const query = graphql`
     query IndexPageQuery {
@@ -17,6 +20,16 @@ export const query = graphql`
                         primary_text
                         secondary_text
                         background_image
+                        about
+                        experience {
+                            present
+                            job_title
+                            description
+                            date_to
+                            date_from
+                            company
+                            city
+                        }
                     }
                 }
             }
@@ -46,7 +59,6 @@ const IndexPage: React.FC<IndexPageProps> = ({
         file,
     },
 }) => {
-    console.log(file)
     const primaryText: JSX.Element = edges[0].node.primary_text ? (
         <RichText render={edges[0].node.primary_text} />
     ) : (
@@ -67,6 +79,23 @@ const IndexPage: React.FC<IndexPageProps> = ({
         <Img fixed={file.childImageSharp.fixed} alt="Logo" />
     )
 
+    const about: JSX.Element = edges[0].node.about ? (
+        <RichText render={edges[0].node.about} />
+    ) : (
+        <div />
+    )
+
+    const experience: JSX.Element[] = edges[0].node.experience
+        ? edges[0].node.experience.map(
+              (exp: PRISMIC_ExperienceType, i: number) => (
+                  <Card
+                      item={exp}
+                      key={createKey([exp.job_title, exp.company], i)}
+                  />
+              )
+          )
+        : [<div key="default-null" />]
+
     return (
         <Layout>
             <SEO title="Home" />
@@ -77,6 +106,7 @@ const IndexPage: React.FC<IndexPageProps> = ({
                 backgroundImage={backgroundImage}
             />
             <Banner />
+            <About about={about} experience={experience} />
         </Layout>
     )
 }
