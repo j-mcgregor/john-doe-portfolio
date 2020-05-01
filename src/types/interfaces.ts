@@ -30,7 +30,7 @@ export interface PRISMIC_ExperienceType {
 
 export interface PRISMIC_landing_node {
     node: {
-        primary_text: PRISMIC_RichTextType
+        primary_text: PRISMIC_RichTextType[]
         secondary_text: PRISMIC_RichTextType[]
         background_image: PRISMIC_Image
         about: PRISMIC_RichTextType[]

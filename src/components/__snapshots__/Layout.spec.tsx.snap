@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout should render 1`] = `
+Array [
+  <nav
+    className="navbar"
+  >
+    <a
+      className="brand"
+      href="/"
+    >
+      John Doe
+    </a>
+    <ul
+      className="nav-list"
+    >
+      <li
+        className="nav-item"
+      >
+        <a
+          href="/contact"
+        >
+          Contact
+        </a>
+      </li>
+    </ul>
+  </nav>,
+  <div
+    className="container-fluid"
+  />,
+  <footer
+    className="footer"
+  >
+    Reach me on
+    <div
+      className="social"
+    >
+      <a
+        href="http://"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-facebook fa-w-16 "
+          data-icon="facebook"
+          data-prefix="fab"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </a>
+      <a
+        href="http://"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-linkedin-in fa-w-14 "
+          data-icon="linkedin-in"
+          data-prefix="fab"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </a>
+      <a
+        href="mailto:"
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-envelope fa-w-16 "
+          data-icon="envelope"
+          data-prefix="far"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </a>
+      <a
+        href="tel:+"
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-phone fa-w-16 "
+          data-icon="phone"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </a>
+    </div>
+  </footer>,
+]
+`;
