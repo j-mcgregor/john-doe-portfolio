@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-    sonarcloud: socialtables/sonarcloud@1.1.1
+    sonarcloud: sonarsource/sonarcloud@1.0.1
 jobs:
     build-and-test:
         docker:
@@ -23,13 +23,11 @@ jobs:
                   command: npm run test --coverage
             - store_artifacts:
                   path: test-report.xml
-            - sonarcloud/scan:
-                  github-project-slug: 'j-mcgregor/john-doe-portfolio'
-                  project-key: 'j-mcgregor_john-doe-portfolio'
-                  test-report-paths: './reports/test-reporter.xml'
+                  prefix: reports
+            - sonarcloud/scan
 
 workflows:
     build-and-test:
         jobs:
             - build-and-test:
-                  context: st-global
+                  context: SonarCloud
