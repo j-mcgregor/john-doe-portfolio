@@ -24,6 +24,8 @@ jobs:
             - store_artifacts:
                   path: test-report.xml
             - sonarcloud/scan:
+                  github-project-slug: 'j-mcgregor/john-doe-portfolio'
+                  project-key: 'j-mcgregor_john-doe-portfolio'
                   test-report-paths: './reports/test-reporter.xml'
 
 workflows:
