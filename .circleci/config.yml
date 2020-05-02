@@ -20,10 +20,9 @@ jobs:
             - run: npm run lint
             - run:
                   name: test
-                  command: npm run test --coverage
+                  command: npm run test
             - store_artifacts:
                   path: test-reporter.xml
-                  prefix: reports
             - sonarcloud/scan
 
 workflows:
