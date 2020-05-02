@@ -23,7 +23,8 @@ jobs:
                   command: npm run test --coverage
             - store_artifacts:
                   path: test-report.xml
-            - sonarcloud/scan
+            - sonarcloud/scan:
+                  test-report-paths: '**/reports/test-reporter.xml'
 
 workflows:
     build-and-test:
