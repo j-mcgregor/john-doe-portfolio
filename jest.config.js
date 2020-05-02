@@ -42,4 +42,5 @@ module.exports = {
     setupFiles: [`<rootDir>/loadershim.js`],
     setupFilesAfterEnv: ['<rootDir>/setup-test-env.js'],
     testResultsProcessor: 'jest-sonar-reporter',
+    reporters: ['default', 'jest-junit'],
 }
