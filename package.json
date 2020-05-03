@@ -70,7 +70,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean && rm -rf reports coverage",
-    "test": "npm run clean && npm run test:reports && npm run test:coverage",
+    "test": "jest",
     "test:clean": "npm run clean",
     "test:reports": "jest --testResultsProcessor",
     "test:coverage": "jest --coverage",
