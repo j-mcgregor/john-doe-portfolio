@@ -18,14 +18,11 @@ jobs:
             - run: npm run lint -- --format junit -o reports/junit/js-lint-results.xml
             - run:
                   name: test
-                  environment:
-                      JEST_JUNIT_OUTPUT_DIR: reports/junit
-                      JEST_JUNIT_OUTPUT_NAME: js-test-results.xml
-                  command: npm run test --ci --runInBand --reporters=default --reporters=jest-junit
+                  command: npm run test:coverage
             - store_test_results:
-                  path: reports
+                  path: coverage
             - store_artifacts:
-                  path: reports
+                  path: coverage
             - sonarcloud/scan
 
 workflows:

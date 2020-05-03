@@ -72,7 +72,7 @@
     "clean": "gatsby clean && rm -rf reports coverage",
     "test": "jest",
     "test:clean": "npm run clean",
-    "test:reports": "jest --testResultsProcessor",
+    "test:reports": "jest --ci --runInBand --reporters=default --reporters=jest-junit --coverage",
     "test:coverage": "jest --coverage",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "husky": "npm run lint && npm run test",
@@ -85,8 +85,8 @@
     }
   },
   "jestSonar": {
-    "reportPath": "reports",
-    "reportFile": "test-report.xml",
+    "reportPath": "coverage",
+    "reportFile": "test-reporter.xml",
     "indent": 4
   },
   "repository": {
