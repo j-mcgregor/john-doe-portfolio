@@ -15,9 +15,11 @@ jobs:
                   key: dependency-cache-{{ checksum "package-lock.json" }}
                   paths:
                       - ./node_modules
-            - run: npm run lint -- --format junit -o reports/junit/js-lint-results.xml
             - run:
-                  name: test
+                  name: Lint
+                  command: npm run lint -- --format junit -o reports/junit/js-lint-results.xml
+            - run:
+                  name: Test
                   command: npm run test:coverage
             - store_test_results:
                   path: coverage

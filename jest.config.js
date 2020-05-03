@@ -33,7 +33,7 @@ module.exports = {
     collectCoverageFrom: [
         'src/**/*.{js,jsx,ts,tsx}',
         '!<rootDir>/node_modules/',
-        '!**/RichTextCustom/**',
+        '!**/RichTextCustom/**.js',
     ],
     globals: {
         __PATH_PREFIX__: ``,
