@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="36" failures="0" time="2.627">
-  <testsuite name="CreateKey" errors="0" failures="0" skipped="0" timestamp="2020-05-03T14:12:28" time="1.019" tests="16">
-    <testcase classname="CreateKey input: [] =&gt; output: &quot;-0&quot;" name="CreateKey input: [] =&gt; output: &quot;-0&quot;" time="0.002">
+<testsuites name="jest tests" tests="36" failures="0" time="2.704">
+  <testsuite name="CreateKey" errors="0" failures="0" skipped="0" timestamp="2020-05-03T14:31:48" time="1.097" tests="16">
+    <testcase classname="CreateKey input: [] =&gt; output: &quot;-0&quot;" name="CreateKey input: [] =&gt; output: &quot;-0&quot;" time="0.003">
     </testcase>
     <testcase classname="CreateKey input: [&quot;&quot;] =&gt; output: &quot;-0&quot;" name="CreateKey input: [&quot;&quot;] =&gt; output: &quot;-0&quot;" time="0">
     </testcase>
@@ -9,11 +9,11 @@
     </testcase>
     <testcase classname="CreateKey input: [&quot;ABC&quot;,&quot;] =&gt; output: &quot;abc--0&quot;" name="CreateKey input: [&quot;ABC&quot;,&quot;] =&gt; output: &quot;abc--0&quot;" time="0">
     </testcase>
-    <testcase classname="CreateKey input: [&quot;A B C&quot;,&quot;] =&gt; output: &quot;a-b-c--0&quot;" name="CreateKey input: [&quot;A B C&quot;,&quot;] =&gt; output: &quot;a-b-c--0&quot;" time="0">
+    <testcase classname="CreateKey input: [&quot;A B C&quot;,&quot;] =&gt; output: &quot;a-b-c--0&quot;" name="CreateKey input: [&quot;A B C&quot;,&quot;] =&gt; output: &quot;a-b-c--0&quot;" time="0.001">
     </testcase>
-    <testcase classname="CreateKey input: [&quot;123&quot;] =&gt; output: &quot;123-0&quot;" name="CreateKey input: [&quot;123&quot;] =&gt; output: &quot;123-0&quot;" time="0.001">
+    <testcase classname="CreateKey input: [&quot;123&quot;] =&gt; output: &quot;123-0&quot;" name="CreateKey input: [&quot;123&quot;] =&gt; output: &quot;123-0&quot;" time="0">
     </testcase>
-    <testcase classname="CreateKey input: [&quot;123&quot;,&quot;] =&gt; output: &quot;123--0&quot;" name="CreateKey input: [&quot;123&quot;,&quot;] =&gt; output: &quot;123--0&quot;" time="0">
+    <testcase classname="CreateKey input: [&quot;123&quot;,&quot;] =&gt; output: &quot;123--0&quot;" name="CreateKey input: [&quot;123&quot;,&quot;] =&gt; output: &quot;123--0&quot;" time="0.001">
     </testcase>
     <testcase classname="CreateKey input: [&quot;1 2 3&quot;,&quot;] =&gt; output: &quot;1-2-3--0&quot;" name="CreateKey input: [&quot;1 2 3&quot;,&quot;] =&gt; output: &quot;1-2-3--0&quot;" time="0">
     </testcase>
@@ -25,71 +25,71 @@
     </testcase>
     <testcase classname="CreateKey input: [&quot;!@#$%^&amp;*() A B C 123&quot;,&quot;] =&gt; output: &quot;1-2-3-a-bc-0&quot;" name="CreateKey input: [&quot;!@#$%^&amp;*() A B C 123&quot;,&quot;] =&gt; output: &quot;1-2-3-a-bc-0&quot;" time="0">
     </testcase>
-    <testcase classname="CreateKey input: &quot;1 2 3&quot; =&gt; output: &quot;1-2-3-0&quot;" name="CreateKey input: &quot;1 2 3&quot; =&gt; output: &quot;1-2-3-0&quot;" time="0">
+    <testcase classname="CreateKey input: &quot;1 2 3&quot; =&gt; output: &quot;1-2-3-0&quot;" name="CreateKey input: &quot;1 2 3&quot; =&gt; output: &quot;1-2-3-0&quot;" time="0.001">
     </testcase>
     <testcase classname="CreateKey input: (&quot;1 2 3&quot;, 1) =&gt; output: &quot;1-2-3-1&quot;" name="CreateKey input: (&quot;1 2 3&quot;, 1) =&gt; output: &quot;1-2-3-1&quot;" time="0">
     </testcase>
     <testcase classname="CreateKey input: &quot;A B C&quot; =&gt; output: &quot;a-b-c-0&quot;" name="CreateKey input: &quot;A B C&quot; =&gt; output: &quot;a-b-c-0&quot;" time="0">
     </testcase>
-    <testcase classname="CreateKey input: (&quot;A B C&quot;, 1) =&gt; output: &quot;a-b-c-1&quot;" name="CreateKey input: (&quot;A B C&quot;, 1) =&gt; output: &quot;a-b-c-1&quot;" time="0">
+    <testcase classname="CreateKey input: (&quot;A B C&quot;, 1) =&gt; output: &quot;a-b-c-1&quot;" name="CreateKey input: (&quot;A B C&quot;, 1) =&gt; output: &quot;a-b-c-1&quot;" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="Navbar" errors="0" failures="0" skipped="0" timestamp="2020-05-03T14:12:28" time="1.162" tests="2">
+  <testsuite name="Navbar" errors="0" failures="0" skipped="0" timestamp="2020-05-03T14:31:48" time="1.2" tests="2">
     <testcase classname="Navbar should render with a text element if no image found" name="Navbar should render with a text element if no image found" time="0.018">
     </testcase>
-    <testcase classname="Navbar should render with an image if found" name="Navbar should render with an image if found" time="0.01">
+    <testcase classname="Navbar should render with an image if found" name="Navbar should render with an image if found" time="0.008">
     </testcase>
   </testsuite>
-  <testsuite name="Banner" errors="0" failures="0" skipped="0" timestamp="2020-05-03T14:12:28" time="1.186" tests="1">
-    <testcase classname="Banner should render" name="Banner should render" time="0.065">
+  <testsuite name="Banner" errors="0" failures="0" skipped="0" timestamp="2020-05-03T14:31:48" time="1.203" tests="1">
+    <testcase classname="Banner should render" name="Banner should render" time="0.058">
     </testcase>
   </testsuite>
-  <testsuite name="Footer" errors="0" failures="0" skipped="0" timestamp="2020-05-03T14:12:28" time="1.188" tests="1">
+  <testsuite name="Footer" errors="0" failures="0" skipped="0" timestamp="2020-05-03T14:31:48" time="1.212" tests="1">
     <testcase classname="Footer should render" name="Footer should render" time="0.054">
     </testcase>
   </testsuite>
-  <testsuite name="404" errors="0" failures="0" skipped="0" timestamp="2020-05-03T14:12:28" time="1.249" tests="1">
-    <testcase classname="404 should render" name="404 should render" time="0.046">
+  <testsuite name="Layout" errors="0" failures="0" skipped="0" timestamp="2020-05-03T14:31:48" time="1.287" tests="1">
+    <testcase classname="Layout should render" name="Layout should render" time="0.049">
     </testcase>
   </testsuite>
-  <testsuite name="Layout" errors="0" failures="0" skipped="0" timestamp="2020-05-03T14:12:28" time="1.29" tests="1">
-    <testcase classname="Layout should render" name="Layout should render" time="0.041">
+  <testsuite name="404" errors="0" failures="0" skipped="0" timestamp="2020-05-03T14:31:48" time="1.294" tests="1">
+    <testcase classname="404 should render" name="404 should render" time="0.052">
     </testcase>
   </testsuite>
-  <testsuite name="Index" errors="0" failures="0" skipped="0" timestamp="2020-05-03T14:12:28" time="1.385" tests="6">
-    <testcase classname="Index renders correctly" name="Index renders correctly" time="0.053">
+  <testsuite name="Index" errors="0" failures="0" skipped="0" timestamp="2020-05-03T14:31:48" time="1.418" tests="6">
+    <testcase classname="Index renders correctly" name="Index renders correctly" time="0.061">
     </testcase>
-    <testcase classname="Index renders with no primary_text" name="Index renders with no primary_text" time="0.006">
+    <testcase classname="Index renders with no primary_text" name="Index renders with no primary_text" time="0.007">
     </testcase>
-    <testcase classname="Index renders with no secondary_text" name="Index renders with no secondary_text" time="0.006">
+    <testcase classname="Index renders with no secondary_text" name="Index renders with no secondary_text" time="0.008">
     </testcase>
-    <testcase classname="Index renders with no background_image" name="Index renders with no background_image" time="0.012">
+    <testcase classname="Index renders with no background_image" name="Index renders with no background_image" time="0.015">
     </testcase>
-    <testcase classname="Index renders with no about data" name="Index renders with no about data" time="0.006">
+    <testcase classname="Index renders with no about data" name="Index renders with no about data" time="0.007">
     </testcase>
-    <testcase classname="Index renders with no experience data" name="Index renders with no experience data" time="0.009">
-    </testcase>
-  </testsuite>
-  <testsuite name="Card" errors="0" failures="0" skipped="0" timestamp="2020-05-03T14:12:28" time="1.637" tests="2">
-    <testcase classname="Card should render" name="Card should render" time="0.029">
-    </testcase>
-    <testcase classname="Card should display &quot;present&quot; if present field is true" name="Card should display &quot;present&quot; if present field is true" time="0.016">
+    <testcase classname="Index renders with no experience data" name="Index renders with no experience data" time="0.01">
     </testcase>
   </testsuite>
-  <testsuite name="Hero" errors="0" failures="0" skipped="0" timestamp="2020-05-03T14:12:28" time="1.644" tests="3">
-    <testcase classname="Hero should render with no logo" name="Hero should render with no logo" time="0.024">
+  <testsuite name="Card" errors="0" failures="0" skipped="0" timestamp="2020-05-03T14:31:48" time="1.619" tests="2">
+    <testcase classname="Card should render" name="Card should render" time="0.03">
+    </testcase>
+    <testcase classname="Card should display &quot;present&quot; if present field is true" name="Card should display &quot;present&quot; if present field is true" time="0.015">
+    </testcase>
+  </testsuite>
+  <testsuite name="About" errors="0" failures="0" skipped="0" timestamp="2020-05-03T14:31:48" time="1.631" tests="3">
+    <testcase classname="About should render the about section by default" name="About should render the about section by default" time="0.034">
+    </testcase>
+    <testcase classname="About should display the experience section when tab is clicked" name="About should display the experience section when tab is clicked" time="0.017">
+    </testcase>
+    <testcase classname="About should display the experience section when tab is clicked" name="About should display the experience section when tab is clicked" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="Hero" errors="0" failures="0" skipped="0" timestamp="2020-05-03T14:31:48" time="1.642" tests="3">
+    <testcase classname="Hero should render with no logo" name="Hero should render with no logo" time="0.026">
     </testcase>
     <testcase classname="Hero should render with logo if provided" name="Hero should render with logo if provided" time="0.006">
     </testcase>
-    <testcase classname="Hero should pass down a background image if provided" name="Hero should pass down a background image if provided" time="0.057">
-    </testcase>
-  </testsuite>
-  <testsuite name="About" errors="0" failures="0" skipped="0" timestamp="2020-05-03T14:12:28" time="1.648" tests="3">
-    <testcase classname="About should render the about section by default" name="About should render the about section by default" time="0.038">
-    </testcase>
-    <testcase classname="About should display the experience section when tab is clicked" name="About should display the experience section when tab is clicked" time="0.018">
-    </testcase>
-    <testcase classname="About should display the experience section when tab is clicked" name="About should display the experience section when tab is clicked" time="0.006">
+    <testcase classname="Hero should pass down a background image if provided" name="Hero should pass down a background image if provided" time="0.052">
     </testcase>
   </testsuite>
 </testsuites>
