@@ -68,8 +68,8 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "rm -rf reports && jest",
+    "clean": "gatsby clean && rm -rf reports coverage",
+    "test": "npm run clean && jest --collectCoverage=true",
     "test:cover": "jest --coverage",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "husky": "npm run lint && npm run test"
@@ -80,7 +80,7 @@
       "pre-push": "npm run husky"
     }
   },
-  "jestSonar": {
+  "jestSonar": { 
     "reportFile": "test-reporter.xml",
     "indent": 4
   },

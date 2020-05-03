@@ -12,48 +12,48 @@
         <testCase name="CreateKey input: [&quot;1 2 3&quot;] =&gt; output: &quot;1-2-3-0&quot;" duration="0"/>
         <testCase name="CreateKey input: [&quot;1 2 3&quot;, &quot;A B C&quot;] =&gt; output: &quot;1-2-3-a-b-c-0&quot;" duration="1"/>
         <testCase name="CreateKey input: [&quot;1 2 3 A BC&quot;] =&gt; output: &quot;1-2-3-a-bc-0&quot;" duration="0"/>
-        <testCase name="CreateKey input: [&quot;!@#$%^&amp;*() A B C 123&quot;,&quot;] =&gt; output: &quot;1-2-3-a-bc-0&quot;" duration="1"/>
-        <testCase name="CreateKey input: &quot;1 2 3&quot; =&gt; output: &quot;1-2-3-0&quot;" duration="0"/>
+        <testCase name="CreateKey input: [&quot;!@#$%^&amp;*() A B C 123&quot;,&quot;] =&gt; output: &quot;1-2-3-a-bc-0&quot;" duration="0"/>
+        <testCase name="CreateKey input: &quot;1 2 3&quot; =&gt; output: &quot;1-2-3-0&quot;" duration="1"/>
         <testCase name="CreateKey input: (&quot;1 2 3&quot;, 1) =&gt; output: &quot;1-2-3-1&quot;" duration="0"/>
-        <testCase name="CreateKey input: &quot;A B C&quot; =&gt; output: &quot;a-b-c-0&quot;" duration="1"/>
-        <testCase name="CreateKey input: (&quot;A B C&quot;, 1) =&gt; output: &quot;a-b-c-1&quot;" duration="0"/>
+        <testCase name="CreateKey input: &quot;A B C&quot; =&gt; output: &quot;a-b-c-0&quot;" duration="0"/>
+        <testCase name="CreateKey input: (&quot;A B C&quot;, 1) =&gt; output: &quot;a-b-c-1&quot;" duration="1"/>
     </file>
     <file path="/Users/jmcgregor/Development/Personal/Manyana/Portfolio-Tutorial/john-doe-portfolio/src/components/shared/Navbar.spec.tsx">
-        <testCase name="Navbar should render with a text element if no image found" duration="20"/>
-        <testCase name="Navbar should render with an image if found" duration="10"/>
+        <testCase name="Navbar should render with a text element if no image found" duration="16"/>
+        <testCase name="Navbar should render with an image if found" duration="7"/>
     </file>
     <file path="/Users/jmcgregor/Development/Personal/Manyana/Portfolio-Tutorial/john-doe-portfolio/src/components/shared/Footer.spec.tsx">
-        <testCase name="Footer should render" duration="53"/>
+        <testCase name="Footer should render" duration="58"/>
     </file>
     <file path="/Users/jmcgregor/Development/Personal/Manyana/Portfolio-Tutorial/john-doe-portfolio/src/components/landing/Banner.spec.tsx">
-        <testCase name="Banner should render" duration="50"/>
+        <testCase name="Banner should render" duration="62"/>
     </file>
     <file path="/Users/jmcgregor/Development/Personal/Manyana/Portfolio-Tutorial/john-doe-portfolio/src/components/Layout.spec.tsx">
-        <testCase name="Layout should render" duration="46"/>
-    </file>
-    <file path="/Users/jmcgregor/Development/Personal/Manyana/Portfolio-Tutorial/john-doe-portfolio/src/components/shared/Card.spec.tsx">
-        <testCase name="Card should render" duration="33"/>
-        <testCase name="Card should display &quot;present&quot; if present field is true" duration="17"/>
+        <testCase name="Layout should render" duration="49"/>
     </file>
     <file path="/Users/jmcgregor/Development/Personal/Manyana/Portfolio-Tutorial/john-doe-portfolio/src/__tests__/404.spec.tsx">
-        <testCase name="404 should render" duration="38"/>
+        <testCase name="404 should render" duration="45"/>
+    </file>
+    <file path="/Users/jmcgregor/Development/Personal/Manyana/Portfolio-Tutorial/john-doe-portfolio/src/__tests__/index.spec.tsx">
+        <testCase name="Index renders correctly" duration="52"/>
+        <testCase name="Index renders with no primary_text" duration="5"/>
+        <testCase name="Index renders with no secondary_text" duration="4"/>
+        <testCase name="Index renders with no background_image" duration="14"/>
+        <testCase name="Index renders with no about data" duration="5"/>
+        <testCase name="Index renders with no experience data" duration="4"/>
+    </file>
+    <file path="/Users/jmcgregor/Development/Personal/Manyana/Portfolio-Tutorial/john-doe-portfolio/src/components/shared/Card.spec.tsx">
+        <testCase name="Card should render" duration="22"/>
+        <testCase name="Card should display &quot;present&quot; if present field is true" duration="10"/>
     </file>
     <file path="/Users/jmcgregor/Development/Personal/Manyana/Portfolio-Tutorial/john-doe-portfolio/src/components/landing/About.spec.tsx">
-        <testCase name="About should render the about section by default" duration="31"/>
-        <testCase name="About should display the experience section when tab is clicked" duration="15"/>
+        <testCase name="About should render the about section by default" duration="28"/>
+        <testCase name="About should display the experience section when tab is clicked" duration="13"/>
         <testCase name="About should display the experience section when tab is clicked" duration="4"/>
     </file>
     <file path="/Users/jmcgregor/Development/Personal/Manyana/Portfolio-Tutorial/john-doe-portfolio/src/components/landing/Hero.spec.tsx">
-        <testCase name="Hero should render with no logo" duration="20"/>
-        <testCase name="Hero should render with logo if provided" duration="5"/>
-        <testCase name="Hero should pass down a background image if provided" duration="48"/>
-    </file>
-    <file path="/Users/jmcgregor/Development/Personal/Manyana/Portfolio-Tutorial/john-doe-portfolio/src/__tests__/index.spec.tsx">
-        <testCase name="Index renders correctly" duration="53"/>
-        <testCase name="Index renders with no primary_text" duration="6"/>
-        <testCase name="Index renders with no secondary_text" duration="7"/>
-        <testCase name="Index renders with no background_image" duration="12"/>
-        <testCase name="Index renders with no about data" duration="5"/>
-        <testCase name="Index renders with no experience data" duration="5"/>
+        <testCase name="Hero should render with no logo" duration="17"/>
+        <testCase name="Hero should render with logo if provided" duration="4"/>
+        <testCase name="Hero should pass down a background image if provided" duration="40"/>
     </file>
 </testExecutions>
