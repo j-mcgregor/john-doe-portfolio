@@ -55,6 +55,7 @@
     "jest-sonar-reporter": "^2.0.0",
     "prettier": "2.0.5",
     "react-test-renderer": "^16.13.1",
+    "sonarqube-scanner": "^2.6.0",
     "ts-jest": "^25.4.0",
     "typescript": "^3.8.3"
   },
@@ -69,10 +70,13 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean && rm -rf reports coverage",
-    "test": "npm run clean && jest --collectCoverage=true",
-    "test:cover": "jest --coverage",
+    "test": "npm run clean && npm run test:reports && npm run test:coverage",
+    "test:clean": "npm run clean",
+    "test:reports": "jest --testResultsProcessor",
+    "test:coverage": "jest --coverage",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "husky": "npm run lint && npm run test"
+    "husky": "npm run lint && npm run test",
+    "sonar": "node sonar-project.js"
   },
   "husky": {
     "hooks": {
@@ -80,8 +84,9 @@
       "pre-push": "npm run husky"
     }
   },
-  "jestSonar": { 
-    "reportFile": "test-reporter.xml",
+  "jestSonar": {
+    "reportPath": "reports",
+    "reportFile": "test-report.xml",
     "indent": 4
   },
   "repository": {

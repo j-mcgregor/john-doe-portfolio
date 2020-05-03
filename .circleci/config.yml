@@ -20,7 +20,7 @@ jobs:
             - run: npm run lint
             - run:
                   name: test
-                  command: npx jest --collectCoverage=true
+                  command: npm run test --collectCoverage=true
             - store_artifacts:
                   path: coverage
             - sonarcloud/scan
