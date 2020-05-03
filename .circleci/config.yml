@@ -20,20 +20,9 @@ jobs:
             - run: npm run lint
             - run:
                   name: test
-                  command: npm run test
-            - run:
-                  name: Run tests with JUnit as reporter
-                  command: jest --ci --runInBand --reporters=default --reporters=jest-junit
-                  environment:
-                      JEST_JUNIT_OUTPUT_DIR: 'reports/junit/js-test-results.xml'
+                  command: jest --collectCoverage=true
             - store_artifacts:
-                  path: test-reporter.xml
-            - store_artifacts:
-                  path: reports/junit/js-test-results.xml
-            - store_test_results:
-                  path: test-reporter.xml
-            - store_test_results:
-                  path: reports/junit/js-test-results.xml
+                  path: coverage
             - sonarcloud/scan
 
 workflows:
