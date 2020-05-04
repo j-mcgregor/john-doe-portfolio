@@ -7,6 +7,7 @@
 
 // 2. Vendors
 @import 'vendors/normalize';
+@import 'vendors/flexboxgrid';
 
 // 3. Base stuff
 @import 'base/base';
@@ -18,11 +19,14 @@
 @import 'base/helpers';
 
 // 4. Layout-related sections
+@import 'layout/navbar';
 @import 'layout/header';
 @import 'layout/footer';
 
 // 5. Components
 @import 'components/button';
+@import 'components/tabs';
+@import 'components/about';
 
 // 6. Page-specific styles
 @import 'pages/home';

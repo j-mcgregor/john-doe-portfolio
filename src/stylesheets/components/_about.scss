@@ -1,0 +1,14 @@
+.about {
+    background: $default-color;
+    color: $white-color;
+    min-height: 500px;
+
+    ul {
+        list-style: none;
+        line-height: $line-height;
+
+        li:before {
+            content: '✓ ';
+        }
+    }
+}

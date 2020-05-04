@@ -13,24 +13,34 @@
  * * You need to set testURL to a valid URL, because some DOM APIs such as localStorage are unhappy with the default (about:blank).
  * SETUP FILES:
  * * lets you list files that will be included before all tests are run, so it’s perfect for this
+ * SETUP FILES AFTER ENV:
+ * * This file gets run automatically by Jest before every test and therefore you don’t need to add the imports to every single test file.
  */
 
 module.exports = {
-  transform: {
-    "^.+\\.tsx?$": "ts-jest",
-    "^.+\\.jsx?$": `<rootDir>/jest-preprocess.js`,
-  },
-  testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.([tj]sx?)$",
-  moduleNameMapper: {
-    ".+\\.(css|styl|less|sass|scss)$": `identity-obj-proxy`,
-    ".+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": `<rootDir>/__mocks__/file-mock.js`,
-  },
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
-  testPathIgnorePatterns: [`node_modules`, `.cache`],
-  transformIgnorePatterns: [`node_modules/(?!(gatsby)/)`],
-  globals: {
-    __PATH_PREFIX__: ``,
-  },
-  testURL: `http://localhost`,
-  setupFiles: [`<rootDir>/loadershim.js`],
+    transform: {
+        '^.+\\.tsx?$': 'ts-jest',
+        '^.+\\.jsx?$': `<rootDir>/jest-preprocess.js`,
+    },
+    testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.([tj]sx?)$',
+    moduleNameMapper: {
+        '.+\\.(css|styl|less|sass|scss)$': `identity-obj-proxy`,
+        '.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': `<rootDir>/__mocks__/file-mock.js`,
+    },
+    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+    testPathIgnorePatterns: [`node_modules`, `.cache`],
+    transformIgnorePatterns: [`node_modules/(?!(gatsby)/)`],
+    collectCoverageFrom: [
+        'src/**/*.{js,jsx,ts,tsx}',
+        '!<rootDir>/node_modules/',
+        '!**/RichTextCustom/**.js',
+    ],
+    globals: {
+        __PATH_PREFIX__: ``,
+    },
+    testURL: `http://localhost`,
+    setupFiles: [`<rootDir>/loadershim.js`],
+    setupFilesAfterEnv: ['<rootDir>/setup-test-env.js'],
+    reporters: ['default', 'jest-junit'],
+    testResultsProcessor: 'jest-sonar-reporter',
 }
