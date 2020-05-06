@@ -74,3 +74,27 @@ export interface AboutProps {
     about: JSX.Element
     experience: JSX.Element[]
 }
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// >>>>>>>>>>>>>>>>>/  FORMS   >>>>>>>>>>>>>>>>>>>>
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+export interface TextInputProps {
+    type: string
+    placeholder: string
+    label?: string
+    name: string
+    required: boolean
+    classNames?: string[]
+    value: string
+    onChange: (e: React.FormEvent<HTMLInputElement>) => void
+}
+
+export interface TextAreaInputProps {
+    placeholder: string
+    label?: string
+    name: string
+    required: boolean
+    value: string
+    onChange: (e: React.FormEvent<HTMLTextAreaElement>) => void
+}
