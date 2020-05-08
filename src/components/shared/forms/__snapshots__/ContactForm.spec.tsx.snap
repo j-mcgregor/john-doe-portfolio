@@ -6,6 +6,11 @@ exports[`ContactForm should render the contact form 1`] = `
     <form
       data-testid="contact-form"
     >
+      <input
+        name="form-name"
+        type="hidden"
+        value="contact-form"
+      />
       <div
         class="row"
       >

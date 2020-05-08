@@ -82,6 +82,7 @@ const ContactForm = (props: ContactFormProps) => {
 
     return (
         <form onSubmit={handleSubmit} data-testid="contact-form">
+            <input type="hidden" name="form-name" value="contact-form" />
             <div className="row">
                 <TextInput
                     type="text"
