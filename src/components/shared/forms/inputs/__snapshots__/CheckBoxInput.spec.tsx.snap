@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckboxInput should render a button 1`] = `
+<body>
+  <div>
+    <div
+      class="form-group flex flex-row"
+    >
+      <input
+        aria-label="Test"
+        data-testid="Test"
+        name="Test"
+        type="checkbox"
+      />
+      <label
+        for="Test"
+      >
+        Test Checkbox
+      </label>
+    </div>
+  </div>
+</body>
+`;

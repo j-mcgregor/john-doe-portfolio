@@ -4,16 +4,35 @@ import TextInput from './inputs/TextInput'
 import TextAreaInput from './inputs/TextAreaInput'
 import Button from '../buttons/Button'
 import CheckboxInput from './inputs/CheckboxInput'
-import fetchWrapper from '../../../utils/fetchWrapper'
+import { fetchWrapper } from '../../../utils/fetchWrapper'
 import encode from '../../../utils/encode'
 
-const ContactForm = () => {
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState('')
-    const [email, setEmail] = useState('')
-    const [message, setMessage] = useState('')
-    const [subscribe, setSubscribe] = useState(false)
+export interface SubmitProps {
+    firstName: string
+    lastName: string
+    email: string
+    message: string
+    subscribe: boolean
+}
+export interface ContactFormProps {
+    onFirstNameChange?: (firstName: string) => void
+    onLastNameChange?: (lastName: string) => void
+    onEmailChange?: (email: string) => void
+    onMessageChange?: (message: string) => void
+    onSubscribe?: (subscribe: boolean) => void
+    onSubmit?: (props: SubmitProps) => void
+    handleCallback?: (callback: Function, arg: boolean | null) => void
+    subscribe?: boolean
+}
+
+const ContactForm = (props: ContactFormProps) => {
+    const [firstName, setFirstName] = useState<string>('')
+    const [lastName, setLastName] = useState<string>('')
+    const [email, setEmail] = useState<string>('')
+    const [message, setMessage] = useState<string>('')
+    const [subscribe, setSubscribe] = useState<boolean>(false)
     const [status, setStatus] = useState<true | false | null>(null)
+    const [, setLoading] = useState<boolean>(false)
 
     const handleChange = (
         e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -21,32 +40,43 @@ const ContactForm = () => {
         const { name, value } = e.currentTarget
         if (name === 'firstName') {
             setFirstName(value)
+            props.onFirstNameChange && props.onFirstNameChange(value)
         } else if (name === 'lastName') {
             setLastName(value)
+            props.onLastNameChange && props.onLastNameChange(value)
         } else if (name === 'email') {
             setEmail(value)
+            props.onEmailChange && props.onEmailChange(value)
         } else if (name === 'message') {
             setMessage(value)
+            props.onMessageChange && props.onMessageChange(value)
         }
     }
 
-    const handleCheckbox = () => setSubscribe(!subscribe)
+    const handleCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { checked } = e.target
+        setSubscribe(checked)
+        props.onSubscribe && props.onSubscribe(checked)
+    }
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault()
         const data = { firstName, lastName, email, message, subscribe }
 
-        fetchWrapper('/', encode(data))
-            .then(() => setStatus(true))
-            .catch(error => {
-                console.log(error)
-                setStatus(false)
-            })
-
-        e.preventDefault()
+        setLoading(true)
+        try {
+            await fetchWrapper('/', encode(data))
+            setStatus(true)
+            props.onSubmit && props.onSubmit(data)
+        } catch (error) {
+            setStatus(false)
+        } finally {
+            setLoading(false)
+        }
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} data-testid="contact-form">
             <div className="row">
                 <TextInput
                     type="text"

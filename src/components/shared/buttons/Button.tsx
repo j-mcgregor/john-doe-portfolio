@@ -6,7 +6,12 @@ const Button: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({
     onClick,
     className = '',
 }) => (
-    <button type={type} onClick={onClick} className={`btn ${className}`}>
+    <button
+        type={type}
+        onClick={onClick}
+        className={`btn ${className}`}
+        data-testid={value}
+    >
         {value}
     </button>
 )

@@ -10,7 +10,7 @@ const TextAreaInput: React.FC<TextAreaInputProps> = ({
     onChange,
 }) => (
     <div className="form-group">
-        {label && <label>{label}</label>}
+        {label && <label htmlFor={name}>{label}</label>}
         <textarea
             placeholder={placeholder}
             className="form-control"
@@ -18,6 +18,8 @@ const TextAreaInput: React.FC<TextAreaInputProps> = ({
             required={required}
             value={value}
             onChange={onChange}
+            data-testid={name}
+            aria-label={name}
         ></textarea>
     </div>
 )

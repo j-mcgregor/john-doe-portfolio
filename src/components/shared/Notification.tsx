@@ -14,9 +14,12 @@ const Notification: React.FC<NotificationProps> = ({
     onClick,
 }) => {
     return (
-        <div className={`text-center notify notify-${type} mt1`}>
+        <div
+            className={`text-center notify notify-${type} mt1`}
+            data-testid={`notify-${type}`}
+        >
             <p>{message}</p>
-            <div className="close" onClick={onClick}>
+            <div className="close" onClick={onClick} data-testid="notify-close">
                 <FontAwesomeIcon icon={faTimes} />
             </div>
         </div>

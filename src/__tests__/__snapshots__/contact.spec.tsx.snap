@@ -149,6 +149,7 @@ Array [
           className="form-container"
         >
           <form
+            data-testid="contact-form"
             onSubmit={[Function]}
           >
             <div
@@ -158,7 +159,9 @@ Array [
                 className="form-group col-md-6"
               >
                 <input
+                  aria-label="firstName"
                   className="form-control"
+                  data-testid="firstName"
                   name="firstName"
                   onChange={[Function]}
                   placeholder="First Name"
@@ -171,7 +174,9 @@ Array [
                 className="form-group col-md-6"
               >
                 <input
+                  aria-label="lastName"
                   className="form-control"
+                  data-testid="lastName"
                   name="lastName"
                   onChange={[Function]}
                   placeholder="Last Name"
@@ -185,7 +190,9 @@ Array [
               className="form-group "
             >
               <input
+                aria-label="email"
                 className="form-control"
+                data-testid="email"
                 name="email"
                 onChange={[Function]}
                 placeholder="Email"
@@ -198,7 +205,9 @@ Array [
               className="form-group"
             >
               <textarea
+                aria-label="message"
                 className="form-control"
+                data-testid="message"
                 name="message"
                 onChange={[Function]}
                 placeholder="Message"
@@ -210,17 +219,22 @@ Array [
               className="form-group flex flex-row"
             >
               <input
+                aria-label="subscribe"
                 checked={false}
+                data-testid="subscribe"
                 name="subscribe"
                 onChange={[Function]}
                 type="checkbox"
               />
-              <label>
+              <label
+                htmlFor="subscribe"
+              >
                 Subscribe to newsletter?
               </label>
             </div>
             <button
               className="btn mt1"
+              data-testid="SEND MESSAGE"
               type="submit"
             >
               SEND MESSAGE

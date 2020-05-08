@@ -30,6 +30,7 @@ module.exports = {
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/camelcase': 'off',
         '@typescript-eslint/class-name-casing': 'off',
+        '@typescript-eslint/no-empty-function': 'off',
     },
     overrides: [
         // Override some TypeScript rules just for .js files

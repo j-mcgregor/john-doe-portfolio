@@ -15,7 +15,7 @@ const TextInput: React.FC<TextInputProps> = ({
     classNames = [],
 }) => (
     <div className={`form-group ${classNames.join(' ')}`}>
-        {label && <label>{label}</label>}
+        {label && <label htmlFor={name}>{label}</label>}
         <input
             type={type}
             placeholder={placeholder}
@@ -24,6 +24,8 @@ const TextInput: React.FC<TextInputProps> = ({
             required={required}
             value={value}
             onChange={onChange}
+            data-testid={name}
+            aria-label={name}
         />
     </div>
 )

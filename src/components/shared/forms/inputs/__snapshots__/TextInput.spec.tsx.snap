@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInput should render an input 1`] = `
+<body>
+  <div>
+    <div
+      class="form-group "
+    >
+      <label
+        for="test"
+      >
+        Test Text Input
+      </label>
+      <input
+        aria-label="test"
+        class="form-control"
+        data-testid="test"
+        name="test"
+        placeholder="Test"
+        required=""
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</body>
+`;
