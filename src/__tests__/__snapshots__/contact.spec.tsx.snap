@@ -152,6 +152,11 @@ Array [
             data-testid="contact-form"
             onSubmit={[Function]}
           >
+            <input
+              name="form-name"
+              type="hidden"
+              value="contact-form"
+            />
             <div
               className="row"
             >
