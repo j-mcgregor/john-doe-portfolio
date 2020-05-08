@@ -62,10 +62,15 @@ const ContactForm = (props: ContactFormProps) => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         const data = { firstName, lastName, email, message, subscribe }
+        const headers = { 'Content-Type': 'application/x-www-form-urlencoded' }
 
         setLoading(true)
         try {
-            await fetchWrapper('/', encode(data))
+            await fetchWrapper(
+                '/',
+                encode({ 'form-name': 'contact-form', ...data }),
+                headers
+            )
             setStatus(true)
             props.onSubmit && props.onSubmit(data)
         } catch (error) {
