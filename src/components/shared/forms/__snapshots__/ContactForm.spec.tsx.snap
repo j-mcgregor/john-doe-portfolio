@@ -4,7 +4,10 @@ exports[`ContactForm should render the contact form 1`] = `
 <body>
   <div>
     <form
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
       data-testid="contact-form"
+      name="contact-form"
     >
       <input
         name="form-name"
