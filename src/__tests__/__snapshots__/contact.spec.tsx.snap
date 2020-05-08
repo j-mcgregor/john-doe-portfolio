@@ -149,7 +149,10 @@ Array [
           className="form-container"
         >
           <form
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
             data-testid="contact-form"
+            name="contact-form"
             onSubmit={[Function]}
           >
             <input

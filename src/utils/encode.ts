@@ -1,8 +1,7 @@
-import { stringify } from 'query-string'
 export default function <T>(data: T) {
-    const formData = new FormData()
-    Object.keys(data).forEach(k => {
-        formData.append(k, data[k])
-    })
-    return stringify(formData)
+    return Object.keys(data)
+        .map(
+            key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+        )
+        .join('&')
 }

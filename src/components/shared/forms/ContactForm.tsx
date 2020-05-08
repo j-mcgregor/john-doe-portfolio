@@ -81,7 +81,13 @@ const ContactForm = (props: ContactFormProps) => {
     }
 
     return (
-        <form onSubmit={handleSubmit} data-testid="contact-form">
+        <form
+            name="contact-form"
+            onSubmit={handleSubmit}
+            data-testid="contact-form"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+        >
             <input type="hidden" name="form-name" value="contact-form" />
             <div className="row">
                 <TextInput
