@@ -32,7 +32,7 @@ const ContactForm = (props: ContactFormProps) => {
     const [message, setMessage] = useState<string>('')
     const [subscribe, setSubscribe] = useState<boolean>(false)
     const [status, setStatus] = useState<true | false | null>(null)
-    const [, setLoading] = useState<boolean>(false)
+    const [loading, setLoading] = useState<boolean>(false)
 
     const handleChange = (
         e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -66,13 +66,12 @@ const ContactForm = (props: ContactFormProps) => {
 
         setLoading(true)
         try {
-            const res = await axios({
+            await axios({
                 method: 'POST',
                 url: 'https://john-doe-portfolio.netlify.app/',
                 data: encode({ 'form-name': 'contact-form', ...data }),
                 headers,
             })
-            console.log(res)
             setStatus(true)
             props.onSubmit && props.onSubmit(data)
         } catch (e) {
@@ -132,7 +131,12 @@ const ContactForm = (props: ContactFormProps) => {
                 name="subscribe"
                 label="Subscribe to newsletter?"
             />
-            <Button type="submit" value="SEND MESSAGE" className="mt1" />
+            <Button
+                type="submit"
+                value="SEND MESSAGE"
+                className="mt1"
+                disabled={loading}
+            />
             {status === true ? (
                 <Notification
                     type="success"

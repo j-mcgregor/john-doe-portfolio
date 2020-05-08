@@ -3,9 +3,9 @@ const path = require('path')
 
 module.exports = {
     siteMetadata: {
-        title: `Gatsby Default Starter`,
-        description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-        author: `@gatsbyjs`,
+        title: `John Doe Portfolio`,
+        description: `A dev-test-deploy setup for a Gatsby portfolio with React, Jest and Typescript`,
+        author: `@j-mcgregor`,
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
@@ -21,10 +21,11 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `gatsby-starter-default`,
-                short_name: `starter`,
+                name: `john-doe-portfolio`,
+                short_name: `JDP`,
                 start_url: `/`,
                 display: `minimal-ui`,
+                icon: 'src/images/logo.png',
             },
         },
         {

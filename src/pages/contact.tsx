@@ -40,6 +40,8 @@ const ContactPage: React.FC = () => {
                 </div>
                 <div className="flex flex-center flex-column right p5 p3-md">
                     <div className="form-container">
+                        <h3>Send us a message</h3>
+                        <h6>And we'll get back to you ASAP</h6>
                         <ContactForm />
                     </div>
                 </div>
