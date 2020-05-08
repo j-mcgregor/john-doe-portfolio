@@ -1,6 +1,7 @@
 import { fetchWrapper } from './fetchWrapper'
 import axios, { AxiosResponse } from 'axios'
 import { mocked } from 'ts-jest/utils'
+import { stringify } from 'query-string'
 
 jest.mock('axios')
 
@@ -16,7 +17,7 @@ describe('FetchWrapper', () => {
 
         mocked(axios).mockResolvedValue(axiosResponse)
 
-        const res = await fetchWrapper('/', new FormData(), {})
+        const res = await fetchWrapper('/', stringify(new FormData()), {})
 
         expect(res).toEqual({ msg: 'success' })
     })
@@ -32,7 +33,7 @@ describe('FetchWrapper', () => {
 
         mocked(axios).mockRejectedValue(axiosResponse)
 
-        const res = await fetchWrapper('/', new FormData(), {})
+        const res = await fetchWrapper('/', stringify(new FormData()), {})
 
         expect(res).toEqual(axiosResponse)
     })
