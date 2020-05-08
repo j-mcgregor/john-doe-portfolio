@@ -1,99 +1,99 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+# John Doe Portfolio
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+This project will be the final REPO for a proposed course on building a JAM Stack portfolio with a heavy focus on testing and CI/CD
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+---
 
-## 🚀 Quick start
+## FOREWORD
 
-1.  **Create a Gatsby site.**
+---
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+A major theme through this project is to create something fairly simple, but creating it very well, from scratch and conception through development to deployment, tested every step of the way. This repo should be the completed final product, and therefore shouuld be expertly documented
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+---
 
-1.  **Start developing.**
+## AIMS
 
-    Navigate into your new site’s directory and start it up.
+---
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+It could be argued 'Development' itself is only a part of Software Development. Everyone has their different views on what this might include, but for me SD is like a tripod, with its 3 legs being:
 
-1.  **Open the source code and start editing!**
+1. Development
+    - Front, Back, Full Stack, or other, Development is the _building_ and _connection_ of code logic to fulfil tasks
+2. Testing
+    - Unit, Integration, System, End-to-end / Regression, Smoke etc. all help to preserve quality of code and ensure confidence that new features don't inadvertently introduce breaking changes
+3. DevOps
+    - The art of taking new features, putting them through the spinner and putting them live as seamlessly, securely and efficiently as possible
 
-    Your site is now running at `http://localhost:8000`!
+The overall aim of this project is to devote time and attention to each of these, to the point that any new features can't go live unless certain quality gates (eg test coverage) are passed.
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+The final result should serve as a solid learning platform to take forward with confidence into new projects
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+---
 
-## 🧐 What's inside?
+## TECHNOLOGY
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+---
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+The list of major and minor tech in this repo, with a brief description of each and a link to that tech's documentation / home page
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+-   [React](https://reactjs.org/) - React is a library for building composable user interfaces. It encourages the creation of reusable UI components, which present data that changes over time. Lots of people use React as the V in MVC. React abstracts away the DOM from you, offering a simpler programming model and better performance
+-   [Gatsby](https://www.gatsbyjs.org/docs/) - Gatsby is a blazing fast modern site generator for React. Renders static HTML on the server and sends it to the client where its saved in the cache, allowing for super fast rendering
+-   [Typescript](https://www.typescriptlang.org/docs/home.html) - TypeScript is an open-source programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript and adds optional static typing to the language. TypeScript is designed for development of large applications and transcompiles to JavaScript
+-   [Sass](https://sass-lang.com/) - Sass is a stylesheet language that’s compiled to CSS. It allows you to use variables, nested rules, mixins, functions, and more, all with a fully CSS-compatible syntax. Sass helps keep large stylesheets well-organized and makes it easy to share design within and across projects
+-   [Styled Components](https://styled-components.com/3) - CSS-in-JS library for using SASS withing React components
+-   [Jest](https://jestjs.io/en/) - Javascript testing framework with minimal config, easy integration, detailed output and work well with other test runners
+-   [Jest JUnit](https://www.npmjs.com/package/jest-junit) - A Jest reporter that creates compatible junit xml files
+-   [Jest Sonar Reporter](https://www.npmjs.com/package/jest-sonar-reporter) - jest-sonar-reporter is a custom results processor for Jest. The processor converts Jest's output into Sonar's generic test data format
+-   [TS-Jest](https://kulshekhar.github.io/ts-jest/) - ts-jest is a TypeScript preprocessor with source map support for Jest that lets you use Jest to test projects written in TypeScript
+-   [@testing-library](https://testing-library.com/) - useful set of testing tools split up into various libraries to allow better testing
+-   [CircleCI](https://circleci.com/) - Cloud-based SASS that acts as our pipeline (cloud version of Jenkins)
+-   [SonarCloud](https://sonarcloud.io/) - Cloud-based SASS that enables us to run our code through configurable quality gates such as code coverage, code smells, vulnerabilities and bad practices
+-   [Github](https://github.com/) - Cloud-based code storage and management platform, for managing and organising Git projects
+-   [Prettier](https://prettier.io/) - opinionated code formatter for enforcing code quality. Especially useful with 'Format on Save' setting
+-   [ESLint](https://eslint.org/) - ESLint statically analyzes your Javascript code to quickly find problems. ESLint is built into most text editors and you can run ESLint as part of your continuous integration pipeline
+-   [Prismic](https://prismic.io/) - Prismic is a cloud-based headless content management tool (serves JSON) that can plugin directly with Gatsby
+-   [Netlify](https://www.netlify.com/) - Advanced all-in-one platform for serving static (and JAM stack) sites. Like Github Pages on steroids
+-   [Axios](https://github.com/axios/axios) - Promise-based HTTP request plugin for getting data from across the web
+-   [FlexboxGrid(2)](https://evgenyrodionov.github.io/flexboxgrid2/) - Lightweight flex-based SCSS-grid system
+-   [React Helmet](https://github.com/nfl/react-helmet) - Helmet takes plain HTML tags and outputs plain HTML tags, but is used inside React components, which makes it the perfect tool for dynamically generating <head> data
+-   [Husky](https://github.com/typicode/husky) - Husky can prevent bad git commit, git push and more
+-   [Font Awesome](https://fontawesome.com/) - vector icons and social logos on your website with Font Awesome, the web's most popular icon set and toolkit
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+---
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+## WORKFLOW
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+---
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+This project was built with 4 pages in mind over 5 "sprints":
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
-
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+-   **SPRINT 1**
+    -   Planning
+        -   Intro and overview
+        -   Main tech used and why
+    -   Design
+        -   UX wireframes
+        -   Git workflow
+    -   Installation
+    -   Configuration
+        -   Typescript
+        -   Jest
+        -   Husky
+        -   Netlify and Prismic
+-   **SPRINT 2**
+    -   Styling & Theme
+    -   Shared components
+        -   Navbar
+        -   Footer
+        -   Not Found
+    -   Landing Page
+        -   Hero
+        -   Banner
+        -   About
+-   **SPRINT 3**
+    -   Contact Page
+-   **SPRINT 4**
+    -   Gallery Page
+-   **SPRINT 5**
+    -   Blog Page
