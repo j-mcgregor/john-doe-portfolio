@@ -3,7 +3,7 @@ import axios from 'axios'
 
 export const fetchWrapper = async <T, P>(
     url: string,
-    data: FormData,
+    data: string,
     headers: any
 ): Promise<T> => {
     try {
