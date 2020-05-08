@@ -29,25 +29,217 @@ Array [
     className="container-fluid"
   >
     <div
-      className="container"
+      className="contact flex flex-row flex-column-md"
     >
       <div
-        className="row"
+        className="flex flex-center flex-column left"
       >
         <div
-          className="col-md-6 p3 flex flex-center flex-column"
+          className="icon-block"
         >
-          <h3>
-            Contact Us
-          </h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore nostrum similique quis dolorem exercitationem enim sint, incidunt quasi numquam, facere fugit quaerat et itaque perferendis optio. Provident nihil praesentium facere.
-          </p>
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-map-marker-alt fa-w-12 fa-2x "
+            data-icon="map-marker-alt"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 384 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+          <div
+            className="flex flex-column"
+          >
+            <h4
+              className="mt0 mb1"
+            >
+              Address
+            </h4>
+            <small>
+              123 Main Street, New York City, USA
+            </small>
+          </div>
         </div>
         <div
-          className="col-md-6 p3 flex flex-center flex-column"
+          className="icon-block"
         >
-          Form goes here...
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-phone fa-w-16 fa-2x "
+            data-icon="phone"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+          <div
+            className="flex flex-column"
+          >
+            <h4
+              className="mt0 mb1"
+            >
+              Phone
+            </h4>
+            <a
+              href="mailto:"
+            >
+              <small>
+                +1 234 543 6789
+              </small>
+            </a>
+          </div>
+        </div>
+        <div
+          className="icon-block"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-envelope fa-w-16 fa-2x "
+            data-icon="envelope"
+            data-prefix="far"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+          <div
+            className="flex flex-column"
+          >
+            <h4
+              className="mt0 mb1"
+            >
+              General Enquiries
+            </h4>
+            <a
+              href="mailto:"
+            >
+              <small>
+                info@enquiries.com
+              </small>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        className="flex flex-center flex-column right p5 p3-md"
+      >
+        <div
+          className="form-container"
+        >
+          <form
+            data-testid="contact-form"
+            onSubmit={[Function]}
+          >
+            <div
+              className="row"
+            >
+              <div
+                className="form-group col-md-6"
+              >
+                <input
+                  aria-label="firstName"
+                  className="form-control"
+                  data-testid="firstName"
+                  name="firstName"
+                  onChange={[Function]}
+                  placeholder="First Name"
+                  required={true}
+                  type="text"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group col-md-6"
+              >
+                <input
+                  aria-label="lastName"
+                  className="form-control"
+                  data-testid="lastName"
+                  name="lastName"
+                  onChange={[Function]}
+                  placeholder="Last Name"
+                  required={true}
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              className="form-group "
+            >
+              <input
+                aria-label="email"
+                className="form-control"
+                data-testid="email"
+                name="email"
+                onChange={[Function]}
+                placeholder="Email"
+                required={true}
+                type="email"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group"
+            >
+              <textarea
+                aria-label="message"
+                className="form-control"
+                data-testid="message"
+                name="message"
+                onChange={[Function]}
+                placeholder="Message"
+                required={true}
+                value=""
+              />
+            </div>
+            <div
+              className="form-group flex flex-row"
+            >
+              <input
+                aria-label="subscribe"
+                checked={false}
+                data-testid="subscribe"
+                name="subscribe"
+                onChange={[Function]}
+                type="checkbox"
+              />
+              <label
+                htmlFor="subscribe"
+              >
+                Subscribe to newsletter?
+              </label>
+            </div>
+            <button
+              className="btn mt1"
+              data-testid="SEND MESSAGE"
+              type="submit"
+            >
+              SEND MESSAGE
+            </button>
+          </form>
         </div>
       </div>
     </div>

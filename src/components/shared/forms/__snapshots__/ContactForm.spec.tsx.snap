@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactForm should render the contact form 1`] = `
+<body>
+  <div>
+    <form
+      data-testid="contact-form"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="form-group col-md-6"
+        >
+          <input
+            aria-label="firstName"
+            class="form-control"
+            data-testid="firstName"
+            name="firstName"
+            placeholder="First Name"
+            required=""
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="form-group col-md-6"
+        >
+          <input
+            aria-label="lastName"
+            class="form-control"
+            data-testid="lastName"
+            name="lastName"
+            placeholder="Last Name"
+            required=""
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="form-group "
+      >
+        <input
+          aria-label="email"
+          class="form-control"
+          data-testid="email"
+          name="email"
+          placeholder="Email"
+          required=""
+          type="email"
+          value=""
+        />
+      </div>
+      <div
+        class="form-group"
+      >
+        <textarea
+          aria-label="message"
+          class="form-control"
+          data-testid="message"
+          name="message"
+          placeholder="Message"
+          required=""
+        />
+      </div>
+      <div
+        class="form-group flex flex-row"
+      >
+        <input
+          aria-label="subscribe"
+          data-testid="subscribe"
+          name="subscribe"
+          type="checkbox"
+        />
+        <label
+          for="subscribe"
+        >
+          Subscribe to newsletter?
+        </label>
+      </div>
+      <button
+        class="btn mt1"
+        data-testid="SEND MESSAGE"
+        type="submit"
+      >
+        SEND MESSAGE
+      </button>
+    </form>
+  </div>
+</body>
+`;

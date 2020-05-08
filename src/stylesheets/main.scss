@@ -27,9 +27,12 @@
 @import 'components/button';
 @import 'components/tabs';
 @import 'components/about';
+@import 'components/form';
+@import 'components/notify';
 
 // 6. Page-specific styles
 @import 'pages/home';
+@import 'pages/contact';
 
 // 7. Themes
 @import 'themes/default';

@@ -1,0 +1,54 @@
+.contact {
+    height: calc(90vh - #{$nav-height});
+    width: 100%;
+    display: flex;
+
+    .left,
+    .right {
+        width: 50%;
+    }
+
+    .left {
+        color: $white-color;
+        background: linear-gradient(
+                45deg,
+                rgba($dark-color, 0.9),
+                rgba($dark-color, 0.8)
+            ),
+            url('https://images.unsplash.com/uploads/1413222992504f1b734a6/1928e537?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80')
+                center center no-repeat;
+    }
+
+    .right {
+        background: $warning-color;
+    }
+
+    .icon-block {
+        display: flex;
+        width: 50%;
+        margin: 2rem 0;
+        align-items: center;
+
+        svg {
+            width: 80px;
+        }
+
+        a:hover {
+            color: $light-color;
+        }
+    }
+}
+
+@media only screen and (max-width: $width-md) {
+    .contact {
+        height: auto;
+        .left,
+        .right {
+            width: 100%;
+        }
+
+        .icon-block {
+            width: 100%;
+        }
+    }
+}
