@@ -1,11 +1,11 @@
 import React from 'react'
 import { act } from 'react-dom/test-utils'
+import axios from 'axios'
 import { mocked } from 'ts-jest/utils'
 import { render, fireEvent } from '@testing-library/react'
 import ContactForm, { ContactFormProps } from './ContactForm'
-import { fetchWrapper } from '../../../utils/fetchWrapper'
 
-jest.mock('../../../utils/fetchWrapper')
+jest.mock('axios')
 
 const renderContactForm = (props: Partial<ContactFormProps> = {}) => {
     const defaultProps: ContactFormProps = {
@@ -26,8 +26,9 @@ describe('ContactForm', () => {
 
     beforeEach(() => {
         jest.clearAllMocks()
-        mockedFetch = mocked(fetchWrapper)
+        mockedFetch = mocked(axios)
     })
+
     it('should render the contact form', () => {
         const utils = renderContactForm()
         const form = utils.getByTestId('contact-form')

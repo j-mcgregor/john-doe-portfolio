@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 import Notification from '../Notification'
 import TextInput from './inputs/TextInput'
 import TextAreaInput from './inputs/TextAreaInput'
 import Button from '../buttons/Button'
 import CheckboxInput from './inputs/CheckboxInput'
-import { fetchWrapper } from '../../../utils/fetchWrapper'
 import encode from '../../../utils/encode'
 
 export interface SubmitProps {
@@ -66,14 +66,16 @@ const ContactForm = (props: ContactFormProps) => {
 
         setLoading(true)
         try {
-            await fetchWrapper(
-                '/',
-                encode({ 'form-name': 'contact-form', ...data }),
-                headers
-            )
+            const res = await axios({
+                method: 'POST',
+                url: 'https://john-doe-portfolio.netlify.app/',
+                data: encode({ 'form-name': 'contact-form', ...data }),
+                headers,
+            })
+            console.log(res)
             setStatus(true)
             props.onSubmit && props.onSubmit(data)
-        } catch (error) {
+        } catch (e) {
             setStatus(false)
         } finally {
             setLoading(false)
