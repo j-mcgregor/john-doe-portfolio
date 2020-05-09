@@ -1,42 +1,53 @@
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// >>>>>>>>>>>>>>>>>/  SHARED  >>>>>>>>>>>>>>>>>>>>
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 export interface NavbarProps {
     brand: string | JSX.Element
 }
 
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// >>>>>>>>>>>>>>>>>/  PRISMIC   >>>>>>>>>>>>>>>>>>
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 export interface PRISMIC_RichTextType {
-    type: string
-    text: string
     spans: any[]
+    text: string
+    type: string
 }
 
 export interface PRISMIC_Image {
-    dimensions: {
-        width: number
-        height: number
-    }
     alt?: string | null
     copyright: string | null
+    dimensions: {
+        height: number
+        width: number
+    }
     url: string
 }
 
 export interface PRISMIC_ExperienceType {
-    job_title: string
+    city: string
+    company: string
     date_from: string
     date_to?: string
-    present?: boolean
-    company: string
-    city: string
     description: PRISMIC_RichTextType[]
+    job_title: string
+    present?: boolean
 }
 
 export interface PRISMIC_landing_node {
     node: {
+        about: PRISMIC_RichTextType[]
+        background_image: PRISMIC_Image
+        experience: PRISMIC_ExperienceType[]
         primary_text: PRISMIC_RichTextType[]
         secondary_text: PRISMIC_RichTextType[]
-        background_image: PRISMIC_Image
-        about: PRISMIC_RichTextType[]
-        experience: PRISMIC_ExperienceType[]
     }
 }
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// >>>>>>>>>>>>>>>>>/  INDEX   >>>>>>>>>>>>>>>>>>>>
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 export interface IndexPageProps {
     data: {
@@ -59,11 +70,15 @@ export interface IndexPageProps {
     }
 }
 
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// >>>>>>>>>>>>>>>>  COMPONENTS   >>>>>>>>>>>>>>>>>
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 export interface HeroProps {
+    backgroundImage?: string
+    logo?: JSX.Element
     primary: JSX.Element
     secondary: JSX.Element
-    logo?: JSX.Element
-    backgroundImage?: string
 }
 
 export interface StyledHeroProps {
@@ -80,21 +95,21 @@ export interface AboutProps {
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 export interface TextInputProps {
-    type: string
-    placeholder: string
+    classNames?: string[]
     label?: string
     name: string
-    required: boolean
-    classNames?: string[]
-    value: string
     onChange: (e: React.FormEvent<HTMLInputElement>) => void
+    placeholder: string
+    required: boolean
+    type: string
+    value: string
 }
 
 export interface TextAreaInputProps {
-    placeholder: string
     label?: string
     name: string
+    onChange: (e: React.FormEvent<HTMLTextAreaElement>) => void
+    placeholder: string
     required: boolean
     value: string
-    onChange: (e: React.FormEvent<HTMLTextAreaElement>) => void
 }

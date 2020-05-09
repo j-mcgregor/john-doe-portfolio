@@ -25,9 +25,9 @@
 
     .icon-block {
         display: flex;
+        align-items: flex-start;
         width: 50%;
         margin: 2rem 0;
-        align-items: center;
 
         svg {
             width: 80px;
@@ -47,8 +47,20 @@
             width: 100%;
         }
 
+        .left {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
         .icon-block {
             width: 100%;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            svg {
+                margin-bottom: 10px;
+            }
         }
     }
 }

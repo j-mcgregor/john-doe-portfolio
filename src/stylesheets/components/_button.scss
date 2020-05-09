@@ -20,4 +20,8 @@
     &:focus {
         outline: none;
     }
+
+    &:disabled {
+        background: lighten($information-color, 10%);
+    }
 }
