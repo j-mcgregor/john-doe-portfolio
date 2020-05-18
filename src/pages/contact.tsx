@@ -5,43 +5,114 @@ import ContactForm from '../components/shared/forms/ContactForm'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt, faPhone } from '@fortawesome/free-solid-svg-icons'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
+import { graphql } from 'gatsby'
+import { ContactPageProps, PRISMIC_SocialLinks } from '../types/interfaces'
+import RichText from '../utils/RichTextCustom'
+import createKey from '../utils/createKey'
 
-const ContactPage: React.FC = () => {
+export const query = graphql`
+    query ContactPageQuery {
+        prismic {
+            allContacts {
+                edges {
+                    node {
+                        title
+                        subtitle
+                        social_links {
+                            name
+                            text
+                            url {
+                                ... on PRISMIC__ExternalLink {
+                                    url
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+`
+
+const ContactPage: React.FC<ContactPageProps> = ({
+    data: {
+        prismic: {
+            allContacts: { edges },
+        },
+    },
+}) => {
+    const title: JSX.Element = edges[0].node.title ? (
+        <div data-testid="title">
+            <RichText render={edges[0].node.title} />
+        </div>
+    ) : (
+        <div />
+    )
+
+    const subtitle: JSX.Element = edges[0].node.subtitle ? (
+        <div data-testid="subtitle">
+            <RichText render={edges[0].node.subtitle} />
+        </div>
+    ) : (
+        <div />
+    )
+
+    const icons =
+        edges[0].node.social_links && edges[0].node.social_links.length
+            ? edges[0].node.social_links.map(
+                  (s: PRISMIC_SocialLinks, i: number) => {
+                      switch (s.name) {
+                          case 'Address':
+                          case 'Mail':
+                          case 'Phone':
+                              const icon =
+                                  s.name === 'Mail'
+                                      ? faEnvelope
+                                      : s.name === 'Address'
+                                      ? faMapMarkerAlt
+                                      : faPhone
+
+                              return (
+                                  <div
+                                      className="icon-block"
+                                      key={createKey(s.name, i)}
+                                      data-testid={s.name}
+                                  >
+                                      <FontAwesomeIcon icon={icon} size="2x" />
+                                      <div className="flex flex-column">
+                                          <h4 className="mt0 mb1">{s.name}</h4>
+                                          {s.url ? (
+                                              <a href={s.url.url}>
+                                                  <small>{s.text}</small>
+                                              </a>
+                                          ) : (
+                                              <small>{s.text}</small>
+                                          )}
+                                      </div>
+                                  </div>
+                              )
+
+                          default:
+                              return null
+                      }
+                  }
+              )
+            : null
+
     return (
         <Layout>
             <SEO title="Home" />
             <div className="contact flex flex-row flex-column-md">
-                <div className="flex flex-center flex-column left">
-                    <div className="icon-block">
-                        <FontAwesomeIcon icon={faMapMarkerAlt} size="2x" />
-                        <div className="flex flex-column">
-                            <h4 className="mt0 mb1">Address</h4>
-                            <small>123 Main Street, New York City, USA</small>
-                        </div>
-                    </div>
-                    <div className="icon-block">
-                        <FontAwesomeIcon icon={faPhone} size="2x" />
-                        <div className="flex flex-column">
-                            <h4 className="mt0 mb1">Phone</h4>
-                            <a href="mailto:">
-                                <small>+1 234 543 6789</small>
-                            </a>
-                        </div>
-                    </div>
-                    <div className="icon-block">
-                        <FontAwesomeIcon icon={faEnvelope} size="2x" />
-                        <div className="flex flex-column">
-                            <h4 className="mt0 mb1">General Enquiries</h4>
-                            <a href="mailto:">
-                                <small>info@enquiries.com</small>
-                            </a>
-                        </div>
-                    </div>
+                <div
+                    className="flex flex-center flex-column left"
+                    data-testid="icon-list"
+                >
+                    {icons}
                 </div>
                 <div className="flex flex-center flex-column right p5 p3-md">
                     <div className="form-container">
-                        <h3>Send us a message</h3>
-                        <h6>And we'll get back to you ASAP</h6>
+                        {title}
+                        {subtitle}
                         <ContactForm />
                     </div>
                 </div>

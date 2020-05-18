@@ -1,27 +1,58 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLinkedinIn, faFacebook } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
-import { faPhone } from '@fortawesome/free-solid-svg-icons'
+import { PRISMIC_SocialLinks } from '../../types/interfaces'
+import { useStaticQuery, graphql } from 'gatsby'
+import { createLink } from '../../utils/createLinkTag'
 
-const Footer = () => {
+export interface FooterProps {
+    socialLinks: PRISMIC_SocialLinks[]
+}
+
+const Footer: React.FC = () => {
+    const data = useStaticQuery(graphql`
+        {
+            prismic {
+                allContacts {
+                    edges {
+                        node {
+                            social_links {
+                                name
+                                text
+                                url {
+                                    ... on PRISMIC__ExternalLink {
+                                        url
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `)
+
+    const links =
+        data && data.prismic.allContacts.edges
+            ? data.prismic.allContacts.edges[0].node.social_links
+                  .map((link: PRISMIC_SocialLinks) => {
+                      const url = link.url ? link.url.url : ''
+                      switch (link.name) {
+                          case 'Facebook':
+                          case 'LinkedIn':
+                              return createLink(link.name, url, true)
+                          case 'Mail':
+                          case 'Phone':
+                              return createLink(link.name, url)
+                          default:
+                              return
+                      }
+                  })
+                  .filter((link: HTMLAnchorElement) => link)
+            : []
+
     return (
         <footer className="footer">
             Reach me on
-            <div className="social">
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={faFacebook} />
-                </a>
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={faLinkedinIn} />
-                </a>
-                <a href="mailto:">
-                    <FontAwesomeIcon icon={faEnvelope} />
-                </a>
-                <a href="tel:+">
-                    <FontAwesomeIcon icon={faPhone} />
-                </a>
-            </div>
+            <div className="social">{links}</div>
         </footer>
     )
 }

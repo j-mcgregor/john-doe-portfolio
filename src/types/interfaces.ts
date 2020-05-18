@@ -35,6 +35,18 @@ export interface PRISMIC_ExperienceType {
     present?: boolean
 }
 
+export interface PRISMIC_SocialLinks {
+    name: string
+    text?: string | null
+    url?: {
+        url: string
+    } | null
+}
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// >>>>>>>>>>>>>>>>>/  NODES   >>>>>>>>>>>>>>>>>>>>
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 export interface PRISMIC_landing_node {
     node: {
         about: PRISMIC_RichTextType[]
@@ -42,6 +54,14 @@ export interface PRISMIC_landing_node {
         experience: PRISMIC_ExperienceType[]
         primary_text: PRISMIC_RichTextType[]
         secondary_text: PRISMIC_RichTextType[]
+    }
+}
+
+export interface PRISMIC_contact_node {
+    node: {
+        title: PRISMIC_RichTextType[] | null
+        subtitle: PRISMIC_RichTextType[] | null
+        social_links: PRISMIC_SocialLinks[]
     }
 }
 
@@ -65,6 +85,20 @@ export interface IndexPageProps {
                     src: string
                     srcSet: string
                 }
+            }
+        }
+    }
+}
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// >>>>>>>>>>>>>>>>>/  CONTACT   >>>>>>>>>>>>>>>>>>>>
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+export interface ContactPageProps {
+    data: {
+        prismic: {
+            allContacts: {
+                edges: PRISMIC_contact_node[]
             }
         }
     }
