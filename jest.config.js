@@ -34,6 +34,7 @@ module.exports = {
         'src/**/*.{js,jsx,ts,tsx}',
         '!<rootDir>/node_modules/',
         '!**/RichTextCustom/**.js',
+        '!**/SEO.tsx',
     ],
     globals: {
         __PATH_PREFIX__: ``,

@@ -50,6 +50,8 @@ const ContactForm = (props: ContactFormProps) => {
         } else if (name === 'message') {
             setMessage(value)
             props.onMessageChange && props.onMessageChange(value)
+        } else {
+            return
         }
     }
 
