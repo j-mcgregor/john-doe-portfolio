@@ -37,6 +37,9 @@ const Navbar: React.FC<NavbarProps> = ({ brand }) => {
             </Link>
             <ul className="nav-list">
                 <li className="nav-item">
+                    <Link to="/gallery">Gallery</Link>
+                </li>
+                <li className="nav-item">
                     <Link to="/contact">Contact</Link>
                 </li>
             </ul>

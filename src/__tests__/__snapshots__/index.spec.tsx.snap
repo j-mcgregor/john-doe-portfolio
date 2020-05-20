@@ -18,6 +18,15 @@ Array [
         className="nav-item"
       >
         <a
+          href="/gallery"
+        >
+          Gallery
+        </a>
+      </li>
+      <li
+        className="nav-item"
+      >
+        <a
           href="/contact"
         >
           Contact
@@ -255,6 +264,15 @@ Array [
         className="nav-item"
       >
         <a
+          href="/gallery"
+        >
+          Gallery
+        </a>
+      </li>
+      <li
+        className="nav-item"
+      >
+        <a
           href="/contact"
         >
           Contact
@@ -486,6 +504,15 @@ Array [
     <ul
       className="nav-list"
     >
+      <li
+        className="nav-item"
+      >
+        <a
+          href="/gallery"
+        >
+          Gallery
+        </a>
+      </li>
       <li
         className="nav-item"
       >
@@ -727,6 +754,15 @@ Array [
         className="nav-item"
       >
         <a
+          href="/gallery"
+        >
+          Gallery
+        </a>
+      </li>
+      <li
+        className="nav-item"
+      >
+        <a
           href="/contact"
         >
           Contact
@@ -960,6 +996,15 @@ Array [
     <ul
       className="nav-list"
     >
+      <li
+        className="nav-item"
+      >
+        <a
+          href="/gallery"
+        >
+          Gallery
+        </a>
+      </li>
       <li
         className="nav-item"
       >
@@ -1198,6 +1243,15 @@ Array [
     <ul
       className="nav-list"
     >
+      <li
+        className="nav-item"
+      >
+        <a
+          href="/gallery"
+        >
+          Gallery
+        </a>
+      </li>
       <li
         className="nav-item"
       >
