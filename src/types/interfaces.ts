@@ -59,7 +59,15 @@ export interface PRISMIC_gallery_image_fields {
         alt: string | null
         copyright: string | null
         url: string
-        thumbnail?: PRISMIC_gallery_image_fields
+        thumbnail?: {
+            dimensions: {
+                width: number
+                height: number
+            }
+            alt: string | null
+            copyright: string | null
+            url: string
+        }
     }
     caption: PRISMIC_RichTextType[] | null
 }
