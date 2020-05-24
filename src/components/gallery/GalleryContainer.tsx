@@ -1,31 +1,67 @@
-import React, { useState } from 'react'
-import { PRISMIC_gallery_image_fields } from '../../types/interfaces'
+import React, { useState, useEffect } from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import {
+    PRISMIC_gallery_image_fields,
+    GalleryContainerProps,
+} from '../../types/interfaces'
 import createKey from '../../utils/createKey'
-import SvgGrid from '../../images/grid-svg.svg'
-import SvgRowGrid from '../../images/grid-row-svg.svg'
-import SvgColGrid from '../../images/grid-col-svg.svg'
+import { chunkArray } from '../../utils/chunkArray'
+import { GridStyle } from '../../types/enums'
 
-interface GalleryContainerProps {
-    images: PRISMIC_gallery_image_fields[]
-}
-
-function chunkArray<T>(array: T[], n: number): Array<T | T[]> {
-    const arrayCopy: T[] = [...array]
-    const result: Array<T | T[]> = []
-    while (arrayCopy.length) {
-        result.push(arrayCopy.splice(0, Math.ceil(arrayCopy.length / n--)))
+export interface SVG_Node {
+    node: {
+        extension: string
+        id: string
+        internal: {
+            mediaType: string
+        }
+        name: string
+        publicURL: string
     }
-    return result
 }
-
-export enum GridStyle {
-    GRID = 'GRID',
-    ROW = 'ROW',
-    COL = 'COL',
+export interface SVG_StaticRequestProps {
+    allFile: {
+        edges: SVG_Node[]
+    }
 }
 
 const GalleryContainer: React.FC<GalleryContainerProps> = ({ images }) => {
+    const data: SVG_StaticRequestProps = useStaticQuery(graphql`
+        {
+            allFile(filter: { extension: { eq: "svg" } }) {
+                edges {
+                    node {
+                        id
+                        name
+                        publicURL
+                    }
+                }
+            }
+        }
+    `)
+
     const [gridStyle, setGridStyle] = useState<GridStyle>(GridStyle.GRID)
+
+    const handleSetGridStyle = (type: GridStyle) => {
+        setGridStyle(type)
+        window.localStorage.setItem('GridStyle', type)
+    }
+
+    useEffect(() => {
+        const item = window.localStorage.getItem('GridStyle')
+
+        switch (item) {
+            case 'ROW':
+                setGridStyle(GridStyle.ROW)
+                break
+            case 'COL':
+                setGridStyle(GridStyle.COL)
+                break
+            default:
+                setGridStyle(GridStyle.GRID)
+                break
+        }
+    }, [])
 
     /**
      * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -36,15 +72,20 @@ const GalleryContainer: React.FC<GalleryContainerProps> = ({ images }) => {
 
     const grid =
         images.length &&
-        images.map(
-            (i: PRISMIC_gallery_image_fields) =>
-                i.image.thumbnail &&
-                i.image.thumbnail.url && (
-                    <div className="image-container">
-                        <img src={i.image.thumbnail.url} />
-                    </div>
-                )
-        )
+        images
+            .map(
+                (img: PRISMIC_gallery_image_fields, i: number) =>
+                    img.image.thumbnail &&
+                    img.image.thumbnail.url && (
+                        <div
+                            className="image-container"
+                            key={createKey('key', i)}
+                        >
+                            <img src={img.image.thumbnail.url} />
+                        </div>
+                    )
+            )
+            .filter(i => i)
 
     /**
      * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -55,14 +96,19 @@ const GalleryContainer: React.FC<GalleryContainerProps> = ({ images }) => {
 
     const row =
         images.length &&
-        images.map(
-            (i: PRISMIC_gallery_image_fields) =>
-                i.image.thumbnail && (
-                    <div className="image-container">
-                        <img src={i.image.url} />
-                    </div>
-                )
-        )
+        images
+            .map(
+                (img: PRISMIC_gallery_image_fields, i: number) =>
+                    img.image.url && (
+                        <div
+                            className="image-container"
+                            key={createKey('key', i)}
+                        >
+                            <img src={img.image.url} />
+                        </div>
+                    )
+            )
+            .filter(i => i)
 
     /**
      * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -71,37 +117,60 @@ const GalleryContainer: React.FC<GalleryContainerProps> = ({ images }) => {
      * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
      */
 
-    const col = chunkArray<PRISMIC_gallery_image_fields>(images, 3).map(
-        (
-            imgArr:
-                | PRISMIC_gallery_image_fields
-                | PRISMIC_gallery_image_fields[]
-        ) => {
-            if (Array.isArray(imgArr)) {
-                const imgs = imgArr.map(
-                    (img: PRISMIC_gallery_image_fields, i: number) => {
-                        return (
-                            <div
-                                className="image-container"
-                                key={createKey(img.image.alt || `alt-img-${i}`)}
-                            >
-                                <img src={img.image.url} />
-                            </div>
-                        )
-                    }
-                )
-                return <div className="image-column">{imgs}</div>
-            }
+    const col = chunkArray<PRISMIC_gallery_image_fields>(images, 3)
+        .map((imgArr: PRISMIC_gallery_image_fields[], index: number) => {
+            const imgs = imgArr.map(
+                (img: PRISMIC_gallery_image_fields, i: number) => {
+                    return (
+                        <div
+                            className="image-container"
+                            key={createKey('key', i)}
+                        >
+                            <img src={img.image.url} />
+                        </div>
+                    )
+                }
+            )
+            return (
+                <div key={createKey('key', index)} className="image-column">
+                    {imgs}
+                </div>
+            )
+        })
+        .filter(i => i)
+
+    const icons = data.allFile.edges.map((node: SVG_Node, index: number) => {
+        // set as default
+        let style: GridStyle = GridStyle.GRID
+
+        // change only is name matches
+        switch (node.node.name) {
+            case 'grid-col-svg.inline':
+                style = GridStyle.COL
+                break
+            case 'grid-row-svg.inline':
+                style = GridStyle.ROW
+                break
+            default:
+                break
         }
-    )
+
+        return (
+            <img
+                key={createKey('key', index)}
+                src={node.node.publicURL}
+                alt={node.node.name}
+                onClick={() => handleSetGridStyle(style)}
+                data-testid="data-test-svg"
+                data-checked={style === gridStyle}
+                title={`data-${style}`}
+            />
+        )
+    })
 
     return (
-        <div className="gallery-container pb3">
-            <div className="container panel">
-                <SvgGrid onClick={() => setGridStyle(GridStyle.GRID)} />
-                <SvgRowGrid onClick={() => setGridStyle(GridStyle.ROW)} />
-                <SvgColGrid onClick={() => setGridStyle(GridStyle.COL)} />
-            </div>
+        <div className="gallery-container pb3" data-testid="gallery-container">
+            <div className="container panel">{icons}</div>
             {gridStyle === GridStyle.GRID ? grid : null}
             {gridStyle === GridStyle.COL ? col : null}
             {gridStyle === GridStyle.ROW ? row : null}

@@ -145,12 +145,23 @@ export interface ContactPageProps {
 // >>>>>>>>>>>>>>>>>/  GALLERY >>>>>>>>>>>>>>>>>>>>
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+export interface LocalFileNode {
+    node: {
+        name: string
+        id: string
+        publicURL: string
+    }
+}
+
 export interface GalleryPageProps {
     data: {
         prismic: {
             allGallerys: {
                 edges: PRISMIC_gallery_node[]
             }
+        }
+        allFile: {
+            edges: LocalFileNode[]
         }
     }
 }
@@ -173,6 +184,10 @@ export interface StyledHeroProps {
 export interface AboutProps {
     about: JSX.Element
     experience: JSX.Element[]
+}
+
+export interface GalleryContainerProps {
+    images: PRISMIC_gallery_image_fields[]
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
