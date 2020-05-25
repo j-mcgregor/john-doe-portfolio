@@ -1,8 +1,7 @@
 import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
-import { times } from 'lodash'
 import * as Gatsby from 'gatsby'
-
+import * as GalleryData from '../../__mocks__/data/gallery'
 import GalleryContainer from './GalleryContainer'
 import { PRISMIC_gallery_image_fields } from '../../types/interfaces'
 
@@ -15,56 +14,8 @@ describe('<GalleryContainer />', () => {
     beforeEach(() => {
         jest.spyOn(window.localStorage.__proto__, 'getItem')
 
-        localFiles = {
-            allFile: {
-                edges: [
-                    {
-                        node: {
-                            name: 'grid-svg.inline',
-                            id: 'grid-svg.inline',
-                            publicURL: '/assets/grid-svg.inline.svg',
-                        },
-                    },
-                    {
-                        node: {
-                            name: 'grid-col-svg.inline',
-                            id: 'grid-col-svg.inline',
-                            publicURL: '/assets/grid-col-svg.inline.svg',
-                        },
-                    },
-                    {
-                        node: {
-                            name: 'grid-row-svg.inline',
-                            id: 'grid-row-svg.inline',
-                            publicURL: '/assets/grid-row-svg.inline.svg',
-                        },
-                    },
-                ],
-            },
-        }
-
-        imageList = times(20, num => ({
-            alt_text: [{ text: 'text', type: 'type', spans: [] }],
-            image: {
-                dimensions: {
-                    width: 300,
-                    height: 300,
-                },
-                alt: `test-${num}`,
-                copyright: `test-${num}`,
-                url: `test-${num}`,
-                thumbnail: {
-                    dimensions: {
-                        width: 300,
-                        height: 300,
-                    },
-                    alt: `test-${num}`,
-                    copyright: `test-${num}`,
-                    url: `test-${num}`,
-                },
-            },
-            caption: [{ text: 'text', type: 'type', spans: [] }],
-        }))
+        localFiles = GalleryData.localFiles
+        imageList = GalleryData.imageList
     })
 
     it('should render the SVG icons', () => {

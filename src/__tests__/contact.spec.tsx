@@ -2,40 +2,11 @@ import React from 'react'
 import { render } from '@testing-library/react'
 import Contact from '../pages/contact'
 import { ContactPageProps, PRISMIC_SocialLinks } from '../types/interfaces'
+import { contactPage } from '../__mocks__/data/contactPage'
 
 describe('Contact', () => {
     let props: ContactPageProps
-    beforeEach(() => {
-        props = {
-            data: {
-                prismic: {
-                    allContacts: {
-                        edges: [
-                            {
-                                node: {
-                                    title: [
-                                        {
-                                            type: 'heading3',
-                                            text: 'Contact Us',
-                                            spans: [],
-                                        },
-                                    ],
-                                    subtitle: [
-                                        {
-                                            type: 'heading4',
-                                            text: 'Leave a message',
-                                            spans: [],
-                                        },
-                                    ],
-                                    social_links: [],
-                                },
-                            },
-                        ],
-                    },
-                },
-            },
-        }
-    })
+    beforeEach(() => (props = contactPage))
 
     it('should render with no icons if none provided', () => {
         const contactData = { ...props.data }
