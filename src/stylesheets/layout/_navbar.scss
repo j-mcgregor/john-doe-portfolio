@@ -11,8 +11,11 @@
         margin: 0;
         padding: 0;
         list-style: none;
+        display: flex;
     }
+
     a {
+        margin-right: 1em;
         transition: 0.2s;
         &:hover {
             text-decoration: none;

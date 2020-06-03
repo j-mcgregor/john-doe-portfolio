@@ -22,6 +22,7 @@
 @import 'layout/navbar';
 @import 'layout/header';
 @import 'layout/footer';
+@import 'layout/gallery';
 
 // 5. Components
 @import 'components/button';
@@ -29,6 +30,7 @@
 @import 'components/about';
 @import 'components/form';
 @import 'components/notify';
+@import 'components/modal';
 
 // 6. Page-specific styles
 @import 'pages/home';

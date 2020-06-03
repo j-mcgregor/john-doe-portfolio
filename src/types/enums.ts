@@ -4,3 +4,9 @@ export enum Breakpoints {
     md = 768,
     sm = 576,
 }
+
+export enum GridStyle {
+    GRID = 'GRID',
+    ROW = 'ROW',
+    COL = 'COL',
+}
