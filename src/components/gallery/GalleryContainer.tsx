@@ -3,27 +3,15 @@ import { useStaticQuery, graphql } from 'gatsby'
 import {
     PRISMIC_gallery_image_fields,
     GalleryContainerProps,
+    SVG_StaticRequestProps,
+    SVG_Node,
 } from '../../types/interfaces'
 import createKey from '../../utils/createKey'
 import { chunkArray } from '../../utils/chunkArray'
 import { GridStyle } from '../../types/enums'
-
-export interface SVG_Node {
-    node: {
-        extension: string
-        id: string
-        internal: {
-            mediaType: string
-        }
-        name: string
-        publicURL: string
-    }
-}
-export interface SVG_StaticRequestProps {
-    allFile: {
-        edges: SVG_Node[]
-    }
-}
+import Modal from '../shared/modal/Modal'
+import { useKeyPress } from '../../utils/hooks/useKeyPress'
+import { GalleryUtils } from '../../utils/helpers/gallery'
 
 const GalleryContainer: React.FC<GalleryContainerProps> = ({ images }) => {
     const data: SVG_StaticRequestProps = useStaticQuery(graphql`
@@ -65,6 +53,72 @@ const GalleryContainer: React.FC<GalleryContainerProps> = ({ images }) => {
 
     /**
      * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+     * @keyEvent left / right
+     * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+     */
+
+    //  will fire on each rerender >>>>>>>>>>
+    const leftPress: boolean = useKeyPress('ArrowLeft')
+    const rightPress: boolean = useKeyPress('ArrowRight')
+    const escPress: boolean = useKeyPress('Escape')
+    // <<<<<<<<<<<<
+
+    const [cursor, setCursor] = useState<number>(0)
+    const [selected, setSelected] = useState<PRISMIC_gallery_image_fields>(
+        images[cursor]
+    )
+    const [modalOpen, setModalOpen] = useState<boolean>(false)
+
+    useEffect(() => {
+        if (images.length && leftPress) {
+            setCursor(prevState => GalleryUtils.moveLeft(prevState, images))
+        }
+    }, [leftPress])
+
+    useEffect(() => {
+        if (images.length && rightPress) {
+            setCursor(prevState => GalleryUtils.moveRight(prevState, images))
+        }
+    }, [rightPress])
+
+    useEffect(() => {
+        setModalOpen(false)
+    }, [escPress])
+
+    // set the current image when modal is open
+    useEffect(() => setSelected(images[cursor]), [cursor])
+
+    /**
+     * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+     * @modal
+     * onClick img sets modal image URL
+     * then its opens the modal
+     * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+     */
+
+    const handleImageClick = (e: React.MouseEvent<HTMLImageElement>) => {
+        return images.filter((i, x) => {
+            if (
+                i.image.url === e.currentTarget.src ||
+                (i.image.thumbnail &&
+                    i.image.thumbnail.url === e.currentTarget.src)
+            ) {
+                // set the current selected image
+                setSelected(i)
+                // set the INDEX of the current image (important when cycling through the modal images)
+                setCursor(x)
+                // open the modal
+                setModalOpen(true)
+                // for testing
+                GalleryUtils.setImage(i, x, true)
+            }
+        })[0]
+    }
+
+    const handleCloseModal = () => setModalOpen(false)
+
+    /**
+     * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
      * @version 1
      * @name : SQUARE GRID
      * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -81,7 +135,11 @@ const GalleryContainer: React.FC<GalleryContainerProps> = ({ images }) => {
                             className="image-container"
                             key={createKey('key', i)}
                         >
-                            <img src={img.image.thumbnail.url} />
+                            <img
+                                src={img.image.thumbnail.url}
+                                onClick={handleImageClick}
+                                data-testid={`gallery-img-${i}`}
+                            />
                         </div>
                     )
             )
@@ -104,7 +162,11 @@ const GalleryContainer: React.FC<GalleryContainerProps> = ({ images }) => {
                             className="image-container"
                             key={createKey('key', i)}
                         >
-                            <img src={img.image.url} />
+                            <img
+                                src={img.image.url}
+                                onClick={handleImageClick}
+                                data-testid={`gallery-img-${i}`}
+                            />
                         </div>
                     )
             )
@@ -126,7 +188,11 @@ const GalleryContainer: React.FC<GalleryContainerProps> = ({ images }) => {
                             className="image-container"
                             key={createKey('key', i)}
                         >
-                            <img src={img.image.url} />
+                            <img
+                                src={img.image.url}
+                                onClick={handleImageClick}
+                                data-testid={`gallery-img-${i}`}
+                            />
                         </div>
                     )
                 }
@@ -174,6 +240,11 @@ const GalleryContainer: React.FC<GalleryContainerProps> = ({ images }) => {
             {gridStyle === GridStyle.GRID ? grid : null}
             {gridStyle === GridStyle.COL ? col : null}
             {gridStyle === GridStyle.ROW ? row : null}
+            <Modal
+                src={selected.image.url}
+                isOpen={modalOpen}
+                handleClose={handleCloseModal}
+            />
         </div>
     )
 }

@@ -75,6 +75,24 @@ exports[`GalleryPage should render an empty <div /> if no description 1`] = `
             title="data-ROW"
           />
         </div>
+        <div
+          class="modal"
+          style="display: none;"
+        >
+          <span
+            class="close"
+            data-testid="close"
+          >
+            ×
+          </span>
+          <img
+            class="modal-content"
+            src="http://something-0.com"
+          />
+          <div
+            class="caption"
+          />
+        </div>
       </div>
     </div>
     <footer
@@ -182,6 +200,24 @@ exports[`GalleryPage should render an empty <div /> if no title 1`] = `
             data-testid="data-test-svg"
             src="/assets/grid-row-svg.inline.svg"
             title="data-ROW"
+          />
+        </div>
+        <div
+          class="modal"
+          style="display: none;"
+        >
+          <span
+            class="close"
+            data-testid="close"
+          >
+            ×
+          </span>
+          <img
+            class="modal-content"
+            src="http://something-0.com"
+          />
+          <div
+            class="caption"
           />
         </div>
       </div>
@@ -293,6 +329,24 @@ exports[`GalleryPage should render with all information 1`] = `
             data-testid="data-test-svg"
             src="/assets/grid-row-svg.inline.svg"
             title="data-ROW"
+          />
+        </div>
+        <div
+          class="modal"
+          style="display: none;"
+        >
+          <span
+            class="close"
+            data-testid="close"
+          >
+            ×
+          </span>
+          <img
+            class="modal-content"
+            src="http://something-0.com"
+          />
+          <div
+            class="caption"
           />
         </div>
       </div>

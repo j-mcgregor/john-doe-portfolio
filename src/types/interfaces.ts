@@ -166,6 +166,23 @@ export interface GalleryPageProps {
     }
 }
 
+export interface SVG_Node {
+    node: {
+        extension: string
+        id: string
+        internal: {
+            mediaType: string
+        }
+        name: string
+        publicURL: string
+    }
+}
+export interface SVG_StaticRequestProps {
+    allFile: {
+        edges: SVG_Node[]
+    }
+}
+
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // >>>>>>>>>>>>>>>>  COMPONENTS   >>>>>>>>>>>>>>>>>
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

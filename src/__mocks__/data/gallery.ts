@@ -138,7 +138,7 @@ export const imageList = times(20, num => ({
         },
         alt: `test-${num}`,
         copyright: `test-${num}`,
-        url: `test-${num}`,
+        url: `http://localhost/test-${num}`,
         thumbnail: {
             dimensions: {
                 width: 300,
@@ -146,7 +146,7 @@ export const imageList = times(20, num => ({
             },
             alt: `test-${num}`,
             copyright: `test-${num}`,
-            url: `test-${num}`,
+            url: `http://localhost/test-${num}`,
         },
     },
     caption: [{ text: 'text', type: 'type', spans: [] }],
