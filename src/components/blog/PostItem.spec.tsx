@@ -18,6 +18,8 @@ describe('PostItem', () => {
     it('should render a post item', () => {
         const { baseElement } = render(<PostItem {...props} />)
 
+        const date = baseElement.getElementsByTagName('time')[0]
+        expect(date.innerHTML).toBe('Jan 01, 2020')
         expect(baseElement).toMatchSnapshot()
     })
 

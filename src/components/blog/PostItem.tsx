@@ -11,10 +11,11 @@ export const PostItem: React.FC<PostSummaryProps> = ({ post }) => {
     let postDate = Date(post.date)
 
     postDate = postDate
-        ? new Intl.DateTimeFormat('en-US', {
+        ? new Intl.DateTimeFormat('en-GB', {
               month: 'short',
               day: '2-digit',
               year: 'numeric',
+              timeZone: 'Europe/London',
           }).format(postDate)
         : ''
 

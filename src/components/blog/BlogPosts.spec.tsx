@@ -24,33 +24,4 @@ describe('BlogPosts', () => {
 
         expect(baseElement).toMatchSnapshot()
     })
-
-    // it('should render the 300th word as an ellipsis if over 300 characters', () => {
-    //     const primary = {
-    //         text: [
-    //             {
-    //                 type: 'paragraph',
-    //                 text: times(120, num => `${num}`).join(' '),
-    //                 spans: [],
-    //             },
-    //         ],
-    //     }
-
-    //     const newProps: BlogPostsProps = {
-    //         posts: {
-    //             ...blogPage.data.prismic.allBlog_posts.edges
-    //         },
-    //     }
-
-    //     const { baseElement } = render(<BlogPosts {...newProps} />)
-
-    //     const paragraph = baseElement.getElementsByTagName('p')[0].innerHTML
-
-    //     expect(paragraph.slice(paragraph.length - 3)).toBe('...')
-    //     expect(paragraph.length).toBe(300)
-    //     expect(baseElement).toMatchSnapshot()
-    // })
-
-    // it('should render null if no text slice provided', () => {
-    // })
 })
