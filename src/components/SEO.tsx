@@ -53,7 +53,7 @@ const SEO: React.SFC<SEOProps> = ({
                 lang,
             }}
             title={title}
-            titleTemplate={`%s | ${helmetTitle}`}
+            titleTemplate={`Portfolio | ${helmetTitle}`}
             meta={[
                 {
                     name: `description`,

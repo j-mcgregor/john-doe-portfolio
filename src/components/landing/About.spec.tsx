@@ -5,7 +5,7 @@ import RichText from '../../utils/RichTextCustom'
 import {
     PRISMIC_RichTextType,
     PRISMIC_ExperienceType,
-} from '../../types/interfaces'
+} from '../../types/interfaces/prismic'
 import Card from '../shared/Card'
 
 describe('About', () => {

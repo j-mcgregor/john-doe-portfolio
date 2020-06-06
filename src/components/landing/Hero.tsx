@@ -1,5 +1,5 @@
 import React from 'react'
-import { HeroProps, StyledHeroProps } from '../../types/interfaces'
+import { HeroProps, StyledHeroProps } from '../../types/interfaces/shared'
 import styled from 'styled-components'
 import { Breakpoints } from '../../types/enums'
 

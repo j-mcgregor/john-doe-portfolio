@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlogPosts should render nothing if no lists 1`] = `
+<body>
+  <div />
+</body>
+`;
+
+exports[`BlogPosts should render with a list of posts 1`] = `
+<body>
+  <div>
+    <div
+      class="blog pb7"
+    >
+      <h1>
+        Blog
+      </h1>
+      <div
+        class="post-summary"
+      >
+        <h2>
+          <a
+            href="/blog/blog-1"
+          >
+            First post
+          </a>
+        </h2>
+        <p
+          class="blog-post-meta"
+        >
+          <time>
+            Jan 01, 2020
+          </time>
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+`;

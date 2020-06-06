@@ -1,5 +1,5 @@
 import React from 'react'
-import { PRISMIC_SocialLinks } from '../../types/interfaces'
+import { PRISMIC_SocialLinks } from '../../types/interfaces/prismic'
 import { useStaticQuery, graphql } from 'gatsby'
 import { createLink } from '../../utils/createLinkTag'
 

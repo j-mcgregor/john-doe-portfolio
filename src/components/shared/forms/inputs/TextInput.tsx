@@ -1,5 +1,5 @@
 import React from 'react'
-import { TextInputProps } from '../../../../types/interfaces'
+import { TextInputProps } from '../../../../types/interfaces/shared'
 
 // We could use const TextInput: React.FC<React.InputHTMLAttributes<HTMLInputElement>>
 // But since this is a composite component including a label, we'll do a custom interface
