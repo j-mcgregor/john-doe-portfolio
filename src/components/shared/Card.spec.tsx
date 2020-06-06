@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import Card from './Card'
-import { PRISMIC_ExperienceType } from '../../types/interfaces'
+import { PRISMIC_ExperienceType } from '../../types/interfaces/prismic'
 
 describe('Card', () => {
     let item: PRISMIC_ExperienceType

@@ -26,6 +26,15 @@ exports[`Navbar should render with a text element if no image found 1`] = `
       className="nav-item"
     >
       <a
+        href="/blog"
+      >
+        Blog
+      </a>
+    </li>
+    <li
+      className="nav-item"
+    >
+      <a
         href="/contact"
       >
         Contact
@@ -119,6 +128,15 @@ exports[`Navbar should render with an image if found 1`] = `
         href="/gallery"
       >
         Gallery
+      </a>
+    </li>
+    <li
+      className="nav-item"
+    >
+      <a
+        href="/blog"
+      >
+        Blog
       </a>
     </li>
     <li

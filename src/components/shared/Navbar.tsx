@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import { NavbarProps } from '../../types/interfaces'
+import { NavbarProps } from '../../types/interfaces/shared'
 import Img from 'gatsby-image'
 
 const Navbar: React.FC<NavbarProps> = ({ brand }) => {
@@ -38,6 +38,9 @@ const Navbar: React.FC<NavbarProps> = ({ brand }) => {
             <ul className="nav-list">
                 <li className="nav-item">
                     <Link to="/gallery">Gallery</Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/blog">Blog</Link>
                 </li>
                 <li className="nav-item">
                     <Link to="/contact">Contact</Link>

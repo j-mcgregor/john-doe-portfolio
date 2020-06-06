@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { AboutProps } from '../../types/interfaces'
+import { AboutProps } from '../../types/interfaces/shared'
 
 const About: React.FC<AboutProps> = ({ about, experience }) => {
     const [showAbout, setShowAbout] = useState(true)

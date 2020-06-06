@@ -1,6 +1,6 @@
 import React from 'react'
 import RichText from '../../utils/RichTextCustom'
-import { PRISMIC_ExperienceType } from '../../types/interfaces'
+import { PRISMIC_ExperienceType } from '../../types/interfaces/prismic'
 
 export interface CardProps {
     item: PRISMIC_ExperienceType

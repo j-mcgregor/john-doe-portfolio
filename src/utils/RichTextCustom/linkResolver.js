@@ -3,5 +3,9 @@ export const linkResolver = doc => {
         return `/${doc.uid}`
     }
 
+    if (doc.type === 'blog_post') {
+        return `/blog/${doc.uid}`
+    }
+
     return '/'
 }

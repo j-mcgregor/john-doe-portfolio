@@ -1,10 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import { GalleryPageProps } from '../types/interfaces'
+import { GalleryPageProps } from '../types/interfaces/gallery'
 import RichText from '../utils/RichTextCustom'
 import Banner from '../components/gallery/Banner'
 import GalleryContainer from '../components/gallery/GalleryContainer'
+import SEO from '../components/SEO'
 
 export const query = graphql`
     query GalleryPageQuery {
@@ -53,6 +54,7 @@ const GalleryPage: React.FC<GalleryPageProps> = ({
 
     return (
         <Layout>
+            <SEO title="Gallery" />
             <Banner>
                 {title}
                 {description}

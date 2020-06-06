@@ -28,6 +28,15 @@ exports[`Contact should render a Mail block 1`] = `
           class="nav-item"
         >
           <a
+            href="/blog"
+          >
+            Blog
+          </a>
+        </li>
+        <li
+          class="nav-item"
+        >
+          <a
             href="/contact"
           >
             Contact
@@ -232,6 +241,15 @@ exports[`Contact should render a Phone block 1`] = `
             href="/gallery"
           >
             Gallery
+          </a>
+        </li>
+        <li
+          class="nav-item"
+        >
+          <a
+            href="/blog"
+          >
+            Blog
           </a>
         </li>
         <li
@@ -448,6 +466,15 @@ exports[`Contact should render an Address block 1`] = `
           class="nav-item"
         >
           <a
+            href="/blog"
+          >
+            Blog
+          </a>
+        </li>
+        <li
+          class="nav-item"
+        >
+          <a
             href="/contact"
           >
             Contact
@@ -654,6 +681,15 @@ exports[`Contact should render nothing if link name isnt Address, Mail or Phone 
           class="nav-item"
         >
           <a
+            href="/blog"
+          >
+            Blog
+          </a>
+        </li>
+        <li
+          class="nav-item"
+        >
+          <a
             href="/contact"
           >
             Contact
@@ -821,6 +857,15 @@ exports[`Contact should render nothing if social_links is invalid 1`] = `
             href="/gallery"
           >
             Gallery
+          </a>
+        </li>
+        <li
+          class="nav-item"
+        >
+          <a
+            href="/blog"
+          >
+            Blog
           </a>
         </li>
         <li
@@ -1000,6 +1045,15 @@ exports[`Contact should render with no icons if none provided 1`] = `
           class="nav-item"
         >
           <a
+            href="/blog"
+          >
+            Blog
+          </a>
+        </li>
+        <li
+          class="nav-item"
+        >
+          <a
             href="/contact"
           >
             Contact
@@ -1173,6 +1227,15 @@ exports[`Contact should render with no subtitle if none provided 1`] = `
           class="nav-item"
         >
           <a
+            href="/blog"
+          >
+            Blog
+          </a>
+        </li>
+        <li
+          class="nav-item"
+        >
+          <a
             href="/contact"
           >
             Contact
@@ -1334,6 +1397,15 @@ exports[`Contact should render with no title if none provided 1`] = `
             href="/gallery"
           >
             Gallery
+          </a>
+        </li>
+        <li
+          class="nav-item"
+        >
+          <a
+            href="/blog"
+          >
+            Blog
           </a>
         </li>
         <li

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import {
-    PRISMIC_gallery_image_fields,
     GalleryContainerProps,
     SVG_StaticRequestProps,
     SVG_Node,
-} from '../../types/interfaces'
+} from '../../types/interfaces/gallery'
+import { PRISMIC_gallery_image_fields } from '../../types/interfaces/prismic'
 import createKey from '../../utils/createKey'
 import { chunkArray } from '../../utils/chunkArray'
 import { GridStyle } from '../../types/enums'

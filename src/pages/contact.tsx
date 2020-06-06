@@ -6,7 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt, faPhone } from '@fortawesome/free-solid-svg-icons'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { graphql } from 'gatsby'
-import { ContactPageProps, PRISMIC_SocialLinks } from '../types/interfaces'
+import { PRISMIC_SocialLinks } from '../types/interfaces/prismic'
+import { ContactPageProps } from '../types/interfaces/contact'
 import RichText from '../utils/RichTextCustom'
 import createKey from '../utils/createKey'
 
@@ -101,7 +102,7 @@ const ContactPage: React.FC<ContactPageProps> = ({
 
     return (
         <Layout>
-            <SEO title="Home" />
+            <SEO title="Contact" />
             <div className="contact flex flex-row flex-column-md">
                 <div
                     className="flex flex-center flex-column left"

@@ -1,5 +1,5 @@
 import React from 'react'
-import { TextAreaInputProps } from '../../../../types/interfaces'
+import { TextAreaInputProps } from '../../../../types/interfaces/shared'
 
 const TextAreaInput: React.FC<TextAreaInputProps> = ({
     placeholder,

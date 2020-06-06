@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostItem should render a post item 1`] = `
+<body>
+  <div>
+    <div
+      class="post-summary"
+    >
+      <h2>
+        <a
+          href="/blog/blog-1"
+        >
+          First post
+        </a>
+      </h2>
+      <p
+        class="blog-post-meta"
+      >
+        <time>
+          Jan 01, 2020
+        </time>
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet
+      </p>
+    </div>
+  </div>
+</body>
+`;

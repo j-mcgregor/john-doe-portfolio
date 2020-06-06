@@ -28,6 +28,15 @@ exports[`GalleryPage should render an empty <div /> if no description 1`] = `
           class="nav-item"
         >
           <a
+            href="/blog"
+          >
+            Blog
+          </a>
+        </li>
+        <li
+          class="nav-item"
+        >
+          <a
             href="/contact"
           >
             Contact
@@ -155,6 +164,15 @@ exports[`GalleryPage should render an empty <div /> if no title 1`] = `
           class="nav-item"
         >
           <a
+            href="/blog"
+          >
+            Blog
+          </a>
+        </li>
+        <li
+          class="nav-item"
+        >
+          <a
             href="/contact"
           >
             Contact
@@ -276,6 +294,15 @@ exports[`GalleryPage should render with all information 1`] = `
             href="/gallery"
           >
             Gallery
+          </a>
+        </li>
+        <li
+          class="nav-item"
+        >
+          <a
+            href="/blog"
+          >
+            Blog
           </a>
         </li>
         <li

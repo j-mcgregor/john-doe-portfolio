@@ -1,7 +1,8 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import Contact from '../pages/contact'
-import { ContactPageProps, PRISMIC_SocialLinks } from '../types/interfaces'
+import { PRISMIC_SocialLinks } from '../types/interfaces/prismic'
+import { ContactPageProps } from '../types/interfaces/contact'
 import { contactPage } from '../__mocks__/data/contactPage'
 
 describe('Contact', () => {

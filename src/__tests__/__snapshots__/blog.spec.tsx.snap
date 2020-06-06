@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Blog should render with a post 1`] = `
+<body>
+  <div>
+    <nav
+      class="navbar"
+    >
+      <a
+        class="brand"
+        href="/"
+      >
+        John Doe
+      </a>
+      <ul
+        class="nav-list"
+      >
+        <li
+          class="nav-item"
+        >
+          <a
+            href="/gallery"
+          >
+            Gallery
+          </a>
+        </li>
+        <li
+          class="nav-item"
+        >
+          <a
+            href="/blog"
+          >
+            Blog
+          </a>
+        </li>
+        <li
+          class="nav-item"
+        >
+          <a
+            href="/contact"
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div
+      class="container-fluid"
+    >
+      <div
+        class="blog pb7"
+      >
+        <h1>
+          Blog
+        </h1>
+        <div
+          class="post-summary"
+        >
+          <h2>
+            <a
+              href="/blog/blog-1"
+            >
+              First post
+            </a>
+          </h2>
+          <p
+            class="blog-post-meta"
+          >
+            <time>
+              Jan 01, 2020
+            </time>
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet
+          </p>
+        </div>
+      </div>
+    </div>
+    <footer
+      class="footer"
+    >
+      Reach me on
+      <div
+        class="social"
+      />
+    </footer>
+  </div>
+</body>
+`;

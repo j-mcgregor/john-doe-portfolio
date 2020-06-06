@@ -3,7 +3,7 @@ import { render, fireEvent } from '@testing-library/react'
 import * as Gatsby from 'gatsby'
 import * as GalleryData from '../../__mocks__/data/gallery'
 import GalleryContainer from './GalleryContainer'
-import { PRISMIC_gallery_image_fields } from '../../types/interfaces'
+import { PRISMIC_gallery_image_fields } from '../../types/interfaces/prismic'
 import { GalleryUtils } from '../../utils/helpers/gallery'
 
 const useStaticQuery = jest.spyOn(Gatsby, 'useStaticQuery')
