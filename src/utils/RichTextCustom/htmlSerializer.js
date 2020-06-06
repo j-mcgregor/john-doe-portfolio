@@ -85,12 +85,6 @@ export const htmlSerializer = function (type, element, content, children, key) {
             )
 
         case Elements.listItem: // Unordered List Item
-            return React.createElement(
-                'li',
-                propsWithUniqueKey(props, key),
-                children
-            )
-
         case Elements.oListItem: // Ordered List Item
             return React.createElement(
                 'li',
@@ -159,6 +153,8 @@ export const htmlSerializer = function (type, element, content, children, key) {
                             : img
                     )
                 }
+            } else {
+                break
             }
 
         case Elements.embed: // Embed

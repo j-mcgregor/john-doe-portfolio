@@ -11,11 +11,15 @@ describe('useKeyPress', () => {
     // Don't bother implementing a keyboard event : it changes on every browser and usually doesn't even work.
 
     const map: MapProps = {}
+    const listener = window.addEventListener
+
     beforeAll(() => {
         window.addEventListener = jest.fn((event, cb) => {
             map[event] = cb
         })
     })
+
+    afterAll(() => (window.addEventListener = listener))
 
     it('should return true when targetKey === keydown event.key and then false after keyup', () => {
         const { result } = renderHook(() => useKeyPress('Enter'))
