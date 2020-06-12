@@ -9,6 +9,7 @@ import {
     PRISMIC_blog_node,
     PRISMIC_RichTextType,
     PRISMIC_MetaType,
+    PRISMIC_blog_node_body,
 } from '../../types/interfaces/prismic'
 
 type ImageType = 'image_with_caption' | 'full-width-image' | 'emphasized'
@@ -77,6 +78,17 @@ export const textSlice = (text: string): PRISMIC_PRIMARY_Text => ({
     },
     label: undefined,
     type: 'text',
+})
+
+export const blogBody = (num: number): PRISMIC_blog_node_body => ({
+    body: [
+        textSlice('Lorem ipsum dolor sit amet'),
+        imageSlice(num),
+        quoteSlice('And I quoteth thus...'),
+    ],
+    _meta: meta(`id-${num}`, `blog-${num}`, 'blog_post'),
+    title: [makeTextType('paragraph', `Post ${num}`)],
+    date: `2020-0${num}-01`,
 })
 
 export const blogNodes: PRISMIC_blog_node[] = _.times(3, num => ({

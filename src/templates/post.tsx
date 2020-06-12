@@ -53,7 +53,11 @@ export const query = graphql`
 `
 
 // Display the title, date, and content of the Post
-const PostBody: React.FC<PRISMIC_blog_node_body> = ({ _meta, title, body }) => {
+export const PostBody: React.FC<PRISMIC_blog_node_body> = ({
+    _meta,
+    title,
+    body,
+}) => {
     const titled = title && title.length !== 0
     return (
         <div className="blog-page">

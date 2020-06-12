@@ -104,9 +104,9 @@ export interface PRISMIC_blog_node_body {
     title: PRISMIC_RichTextType[]
     date: string
     body: Array<
-        PRISMIC_PRIMARY_Image_with_Caption &
-            PRISMIC_PRIMARY_Quote &
-            PRISMIC_PRIMARY_Text
+        | PRISMIC_PRIMARY_Image_with_Caption
+        | PRISMIC_PRIMARY_Quote
+        | PRISMIC_PRIMARY_Text
     >
     _meta: {
         id: string
