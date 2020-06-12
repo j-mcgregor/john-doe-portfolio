@@ -1,11 +1,16 @@
 import React from 'react'
-import { PostSummaryProps } from '../../types/interfaces/blog'
+import {
+    PostSummaryProps,
+    PRISMIC_PRIMARY_Text,
+} from '../../types/interfaces/blog'
 import { RichText } from 'prismic-reactjs'
 
 // Function to retrieve a small preview of the post's text
 export const Excerpt: React.FC<PostSummaryProps> = ({ post }) => {
     // Find the first text slice of post's body
-    const firstTextSlice = post.body.find(slice => slice.type === 'text')
+    const firstTextSlice = post.body.find(
+        slice => slice.type === 'text'
+    ) as PRISMIC_PRIMARY_Text
 
     if (firstTextSlice === undefined) {
         return null
