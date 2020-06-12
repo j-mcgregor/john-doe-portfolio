@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostSlices should render a Quote Slice 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        class="homepage-slice-wrapper"
+      >
+        <div
+          class="post-quote container"
+        >
+          <blockquote>
+            <p>
+              And I quoteth thus...
+            </p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`PostSlices should render a Text Slice 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        class="homepage-slice-wrapper"
+      >
+        <div
+          class="post-text container"
+        >
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`PostSlices should render all slices 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        class="homepage-slice-wrapper"
+      >
+        <div
+          class="post-text container"
+        >
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="homepage-slice-wrapper"
+      >
+        <div
+          class="post-image container"
+        >
+          <figcaption
+            class="block-img"
+          >
+            <img
+              alt="alt-0"
+              src="http://fillmurray.com/300/300"
+            />
+            <figcaption
+              class="image-label"
+            >
+              caption-0
+            </figcaption>
+          </figcaption>
+        </div>
+      </div>
+      <div
+        class="homepage-slice-wrapper"
+      >
+        <div
+          class="post-quote container"
+        >
+          <blockquote>
+            <p>
+              And I quoteth thus...
+            </p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`PostSlices should render an Image Slice 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        class="homepage-slice-wrapper"
+      >
+        <div
+          class="post-image container"
+        >
+          <figcaption
+            class="block-img"
+          >
+            <img
+              alt="alt-0"
+              src="http://fillmurray.com/300/300"
+            />
+            <figcaption
+              class="image-label"
+            >
+              caption-0
+            </figcaption>
+          </figcaption>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`PostSlices should render empty div if type !== match 1`] = `
+<body>
+  <div>
+    <div>
+      <div />
+    </div>
+  </div>
+</body>
+`;

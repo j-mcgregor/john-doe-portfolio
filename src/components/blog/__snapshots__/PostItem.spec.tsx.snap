@@ -10,7 +10,7 @@ exports[`PostItem should render a post item 1`] = `
         <a
           href="/blog/blog-1"
         >
-          First post
+          Post 1
         </a>
       </h2>
       <p

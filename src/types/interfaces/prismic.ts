@@ -2,7 +2,11 @@
 // >>>>>>>>>>>>>>>>>/  PRISMIC   >>>>>>>>>>>>>>>>>>
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-import { BlogBodyProps } from './blog'
+import {
+    PRISMIC_PRIMARY_Image_with_Caption,
+    PRISMIC_PRIMARY_Quote,
+    PRISMIC_PRIMARY_Text,
+} from './blog'
 
 export interface PRISMIC_RichTextType {
     spans: any[]
@@ -10,7 +14,14 @@ export interface PRISMIC_RichTextType {
     type: string
 }
 
+export interface PRISMIC_MetaType {
+    id: string
+    uid: string
+    type: string
+}
+
 export interface PRISMIC_Image {
+    caption?: PRISMIC_RichTextType[]
     alt?: string | null
     copyright: string | null
     dimensions: {
@@ -75,8 +86,8 @@ export interface PRISMIC_landing_node {
 
 export interface PRISMIC_contact_node {
     node: {
-        title: PRISMIC_RichTextType[] | null
-        subtitle: PRISMIC_RichTextType[] | null
+        title?: PRISMIC_RichTextType[] | null
+        subtitle?: PRISMIC_RichTextType[] | null
         social_links: PRISMIC_SocialLinks[]
     }
 }
@@ -92,7 +103,11 @@ export interface PRISMIC_gallery_node {
 export interface PRISMIC_blog_node_body {
     title: PRISMIC_RichTextType[]
     date: string
-    body: BlogBodyProps[]
+    body: Array<
+        PRISMIC_PRIMARY_Image_with_Caption &
+            PRISMIC_PRIMARY_Quote &
+            PRISMIC_PRIMARY_Text
+    >
     _meta: {
         id: string
         uid: string

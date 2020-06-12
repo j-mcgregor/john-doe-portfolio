@@ -10,6 +10,22 @@ module.exports = {
     plugins: [
         `gatsby-plugin-react-helmet`,
         {
+            resolve: 'gatsby-source-prismic-graphql',
+            options: {
+                repositoryName: 'john-doe-portfolio',
+                path: '/preview',
+                previews: true,
+                pages: [
+                    {
+                        type: 'Blog_post', // casing is particularly important; NO SPACES
+                        match: '/blog/:uid',
+                        path: '/blog-preview',
+                        component: require.resolve('./src/templates/post.tsx'),
+                    },
+                ],
+            },
+        },
+        {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `images`,
@@ -53,13 +69,8 @@ module.exports = {
                 },
             },
         },
+
         'gatsby-plugin-typescript',
-        {
-            resolve: 'gatsby-source-prismic-graphql',
-            options: {
-                repositoryName: 'john-doe-portfolio',
-            },
-        },
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
         // `gatsby-plugin-offline`,

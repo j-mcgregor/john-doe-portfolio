@@ -10,9 +10,11 @@ describe('Blog', () => {
     beforeEach(() => (props = blogPage))
 
     it('should render with a post', () => {
-        const { baseElement, queryByText } = render(<Blog data={props.data} />)
+        const { baseElement, queryByText, queryAllByText } = render(
+            <Blog data={props.data} />
+        )
 
-        const text = queryByText('Lorem ipsum dolor sit amet')
+        const text = queryAllByText('Lorem ipsum dolor sit amet')
         const date = queryByText('Jan 01, 2020')
 
         expect(baseElement).toMatchSnapshot()
@@ -24,14 +26,14 @@ describe('Blog', () => {
         const mockLink = jest.spyOn(Link, 'linkResolver')
         const { queryByText } = render(<Blog data={props.data} />)
 
-        const title = queryByText('First post')
+        const title = queryByText('Post 1')
 
         if (title) {
             fireEvent.click(title)
         }
 
         expect(mockLink).toHaveBeenCalledWith({
-            id: '123',
+            id: 'id-1',
             type: 'blog_post',
             uid: 'blog-1',
         })

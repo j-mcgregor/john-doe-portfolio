@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostTemplate should render with all information 1`] = `
+<body>
+  <div>
+    <nav
+      class="navbar"
+    >
+      <a
+        class="brand"
+        href="/"
+      >
+        John Doe
+      </a>
+      <ul
+        class="nav-list"
+      >
+        <li
+          class="nav-item"
+        >
+          <a
+            href="/gallery"
+          >
+            Gallery
+          </a>
+        </li>
+        <li
+          class="nav-item"
+        >
+          <a
+            href="/blog"
+          >
+            Blog
+          </a>
+        </li>
+        <li
+          class="nav-item"
+        >
+          <a
+            href="/contact"
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div
+      class="container-fluid"
+    >
+      <div
+        class="blog-page"
+      >
+        <div
+          class="container post-header"
+        >
+          <div
+            class="back"
+          >
+            <a
+              href="/blog"
+            >
+              Back
+            </a>
+          </div>
+          <h1
+            data-wio-id="id-1"
+          >
+            Post 1
+          </h1>
+        </div>
+        <div>
+          <div
+            class="homepage-slice-wrapper"
+          >
+            <div
+              class="post-text container"
+            >
+              <div>
+                <p>
+                  Lorem ipsum dolor sit amet
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="homepage-slice-wrapper"
+          >
+            <div
+              class="post-image container"
+            >
+              <figcaption
+                class="block-img"
+              >
+                <img
+                  alt="alt-0"
+                  src="http://fillmurray.com/300/300"
+                />
+                <figcaption
+                  class="image-label"
+                >
+                  caption-0
+                </figcaption>
+              </figcaption>
+            </div>
+          </div>
+          <div
+            class="homepage-slice-wrapper"
+          >
+            <div
+              class="post-quote container"
+            >
+              <blockquote>
+                <p>
+                  And I quoteth thus...
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer
+      class="footer"
+    >
+      Reach me on
+      <div
+        class="social"
+      />
+    </footer>
+  </div>
+</body>
+`;
