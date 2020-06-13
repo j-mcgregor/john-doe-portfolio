@@ -42,13 +42,15 @@ describe('ImageCaption', () => {
         })
 
         it('should render a default image with no alt text if none provided', () => {
+            const image = props.slice.primary ? props.slice.primary.image : {}
+
             const newProps: ImageCaptionProps = {
                 slice: {
                     ...props.slice,
                     primary: {
                         ...props.slice.primary,
                         image: {
-                            ...props.slice.primary.image,
+                            ...image,
                             alt: '',
                         } as PRISMIC_Image, // so we don't have to include every prop
                     },
@@ -100,13 +102,15 @@ describe('ImageCaption', () => {
         })
 
         it('should render an emphasized image with no alt text if none provided', () => {
+            const image = props.slice.primary ? props.slice.primary.image : {}
+
             const newProps: ImageCaptionProps = {
                 slice: {
                     ...props.slice,
                     primary: {
                         ...props.slice.primary,
                         image: {
-                            ...props.slice.primary.image,
+                            ...image,
                             alt: '',
                         } as PRISMIC_Image, // so we don't have to include every prop
                     },
