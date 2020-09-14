@@ -35,6 +35,7 @@ module.exports = {
         '!<rootDir>/node_modules/',
         '!**/RichTextCustom/**.js',
         '!**/SEO.tsx',
+        '!src/components/shared/slices/index.ts',
     ],
     globals: {
         __PATH_PREFIX__: ``,

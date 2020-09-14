@@ -3,6 +3,8 @@ import { RichText } from 'prismic-reactjs'
 import { linkResolver } from './linkResolver'
 import { htmlSerializer } from './htmlSerializer'
 
+export const asText = RichText.asText
+
 const RichTextCustom = ({ render }) => (
     <RichText
         render={render}

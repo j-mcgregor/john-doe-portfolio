@@ -60,7 +60,7 @@ exports[`Blog should render with a post 1`] = `
             <a
               href="/blog/blog-1"
             >
-              First post
+              Post 1
             </a>
           </h2>
           <p
@@ -68,6 +68,48 @@ exports[`Blog should render with a post 1`] = `
           >
             <time>
               Jan 01, 2020
+            </time>
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet
+          </p>
+        </div>
+        <div
+          class="post-summary"
+        >
+          <h2>
+            <a
+              href="/blog/blog-2"
+            >
+              Post 2
+            </a>
+          </h2>
+          <p
+            class="blog-post-meta"
+          >
+            <time>
+              Feb 01, 2020
+            </time>
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet
+          </p>
+        </div>
+        <div
+          class="post-summary"
+        >
+          <h2>
+            <a
+              href="/blog/blog-3"
+            >
+              Post 3
+            </a>
+          </h2>
+          <p
+            class="blog-post-meta"
+          >
+            <time>
+              Mar 01, 2020
             </time>
           </p>
           <p>

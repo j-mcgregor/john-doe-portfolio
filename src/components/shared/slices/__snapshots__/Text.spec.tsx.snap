@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text should render 1`] = `
+<body>
+  <div>
+    <div
+      class="post-text container"
+    >
+      <div>
+        <p>
+          Thats no moon...
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+`;

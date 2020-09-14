@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quote should render 1`] = `
+<body>
+  <div>
+    <div
+      class="post-quote container"
+    >
+      <blockquote>
+        <p>
+          Join the Dark Side
+        </p>
+      </blockquote>
+    </div>
+  </div>
+</body>
+`;

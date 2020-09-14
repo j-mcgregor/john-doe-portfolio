@@ -1,0 +1,284 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageCaption Default Image should render a default image 1`] = `
+<body>
+  <div>
+    <div
+      class="post-image container"
+    >
+      <figcaption
+        class="block-img"
+      >
+        <img
+          alt="alt-0"
+          src="http://fillmurray.com/300/300"
+        />
+        <figcaption
+          class="image-label"
+        >
+          caption-0
+        </figcaption>
+      </figcaption>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ImageCaption Default Image should render a default image with no alt text if none provided 1`] = `
+<body>
+  <div>
+    <div
+      class="post-image container"
+    >
+      <figcaption
+        class="block-img"
+      >
+        <img
+          alt=""
+          src="http://fillmurray.com/300/300"
+        />
+        <figcaption
+          class="image-label"
+        >
+          caption-0
+        </figcaption>
+      </figcaption>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ImageCaption Default Image should render a default image with no caption if none provided 1`] = `
+<body>
+  <div>
+    <div
+      class="post-image container"
+    >
+      <figcaption
+        class="block-img"
+      >
+        <img
+          alt="alt-0"
+          src="http://fillmurray.com/300/300"
+        />
+      </figcaption>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ImageCaption Emphasized Image should render an emphasized image 1`] = `
+<body>
+  <div>
+    <div
+      class="post-image container"
+    >
+      <figcaption
+        class="block-img emphasized"
+      >
+        <img
+          alt="alt-0"
+          src="http://fillmurray.com/300/300"
+        />
+        <figcaption
+          class="image-label"
+        >
+          caption-0
+        </figcaption>
+      </figcaption>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ImageCaption Emphasized Image should render an emphasized image with no alt text if none provided 1`] = `
+<body>
+  <div>
+    <div
+      class="post-image container"
+    >
+      <figcaption
+        class="block-img emphasized"
+      >
+        <img
+          alt=""
+          src="http://fillmurray.com/300/300"
+        />
+        <figcaption
+          class="image-label"
+        >
+          caption-0
+        </figcaption>
+      </figcaption>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ImageCaption Emphasized Image should render an emphasized image with no caption if none provided 1`] = `
+<body>
+  <div>
+    <div
+      class="post-image container"
+    >
+      <figcaption
+        class="block-img emphasized"
+      >
+        <img
+          alt="alt-0"
+          src="http://fillmurray.com/300/300"
+        />
+      </figcaption>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ImageCaption Full Width Image should render a full-width image 1`] = `
+<body>
+  <div>
+    <div
+      class="post-image full-width-image"
+      style="background-image: url(http://fillmurray.com/300/300);"
+    >
+      <div
+        class="wrapper"
+      >
+        <span
+          class="image-label"
+        >
+          caption-0
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ImageCaption Full Width Image should render a full-width image with no background image if no url provided 1`] = `
+<body>
+  <div>
+    <div
+      class="post-image full-width-image"
+    >
+      <div
+        class="wrapper"
+      >
+        <span
+          class="image-label"
+        >
+          caption-0
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ImageCaption Full Width Image should render a full-width image with no caption if none provided 1`] = `
+<body>
+  <div>
+    <div
+      class="post-image full-width-image"
+      style="background-image: url(http://fillmurray.com/300/300);"
+    >
+      <div
+        class="wrapper"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ImageCaption Image Caption should render 1`] = `
+<body>
+  <div>
+    <div
+      class="post-image container"
+    >
+      <figcaption
+        class="block-img"
+      >
+        <img
+          alt="alt-0"
+          src="http://fillmurray.com/300/300"
+        />
+        <figcaption
+          class="image-label"
+        >
+          caption-0
+        </figcaption>
+      </figcaption>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ImageCaption Render Switch Image should render a DefaultImage by default 1`] = `
+<body>
+  <div>
+    <div
+      class="post-image container"
+    >
+      <figcaption
+        class="block-img"
+      >
+        <img
+          alt="alt-0"
+          src="http://fillmurray.com/300/300"
+        />
+        <figcaption
+          class="image-label"
+        >
+          caption-0
+        </figcaption>
+      </figcaption>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ImageCaption Render Switch Image should render a FullWidthImage if label is full-width-image 1`] = `
+<body>
+  <div>
+    <div
+      class="post-image full-width-image"
+      style="background-image: url(http://fillmurray.com/300/300);"
+    >
+      <div
+        class="wrapper"
+      >
+        <span
+          class="image-label"
+        >
+          caption-0
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ImageCaption Render Switch Image should render an Emphasized if label is emphasized 1`] = `
+<body>
+  <div>
+    <div
+      class="post-image container"
+    >
+      <figcaption
+        class="block-img emphasized"
+      >
+        <img
+          alt="alt-0"
+          src="http://fillmurray.com/300/300"
+        />
+        <figcaption
+          class="image-label"
+        >
+          caption-0
+        </figcaption>
+      </figcaption>
+    </div>
+  </div>
+</body>
+`;
